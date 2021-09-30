@@ -1,0 +1,7 @@
+D:\code_projetos\gitHub\Alura\CSharp\C#-2\01-ByteBank\bin\Debug\01-ByteBank.exe.config
+D:\code_projetos\gitHub\Alura\CSharp\C#-2\01-ByteBank\bin\Debug\01-ByteBank.exe
+D:\code_projetos\gitHub\Alura\CSharp\C#-2\01-ByteBank\bin\Debug\01-ByteBank.pdb
+D:\code_projetos\gitHub\Alura\CSharp\C#-2\01-ByteBank\obj\Debug\01-ByteBank.csprojAssemblyReference.cache
+D:\code_projetos\gitHub\Alura\CSharp\C#-2\01-ByteBank\obj\Debug\01-ByteBank.csproj.CoreCompileInputs.cache
+D:\code_projetos\gitHub\Alura\CSharp\C#-2\01-ByteBank\obj\Debug\01-ByteBank.exe
+D:\code_projetos\gitHub\Alura\CSharp\C#-2\01-ByteBank\obj\Debug\01-ByteBank.pdb
