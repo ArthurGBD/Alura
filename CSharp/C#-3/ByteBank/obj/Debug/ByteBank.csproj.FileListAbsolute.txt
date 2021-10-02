@@ -5,3 +5,10 @@ C:\Users\Automahelp\Desktop\Alura\Alura\CSharp\C#-3\ByteBank\bin\Debug\ByteBank.
 C:\Users\Automahelp\Desktop\Alura\Alura\CSharp\C#-3\ByteBank\bin\Debug\ByteBank.pdb
 C:\Users\Automahelp\Desktop\Alura\Alura\CSharp\C#-3\ByteBank\obj\Debug\ByteBank.exe
 C:\Users\Automahelp\Desktop\Alura\Alura\CSharp\C#-3\ByteBank\obj\Debug\ByteBank.pdb
+D:\code_projetos\gitHub\Alura\CSharp\C#-3\ByteBank\obj\Debug\ByteBank.csprojAssemblyReference.cache
+D:\code_projetos\gitHub\Alura\CSharp\C#-3\ByteBank\obj\Debug\ByteBank.csproj.CoreCompileInputs.cache
+D:\code_projetos\gitHub\Alura\CSharp\C#-3\ByteBank\obj\Debug\ByteBank.exe
+D:\code_projetos\gitHub\Alura\CSharp\C#-3\ByteBank\obj\Debug\ByteBank.pdb
+D:\code_projetos\gitHub\Alura\CSharp\C#-3\ByteBank\bin\Debug\ByteBank.exe.config
+D:\code_projetos\gitHub\Alura\CSharp\C#-3\ByteBank\bin\Debug\ByteBank.exe
+D:\code_projetos\gitHub\Alura\CSharp\C#-3\ByteBank\bin\Debug\ByteBank.pdb

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ByteBank.Sistemas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Funcionarios
 {
-    class GerenteConta : Funcionario
+    class GerenteConta : FuncionarioAutenticavel
     {
         public GerenteConta(string cpf) : base(4000, cpf)
         {
