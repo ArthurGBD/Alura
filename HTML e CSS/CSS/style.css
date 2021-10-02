@@ -59,9 +59,10 @@ nav a:hover {
     border-color: #088C19;
 }
 
-.produtos li:hover h2{
+.produtos li:hover h2 {
     font-size: 34px;
 }
+
 .produtos h2 {
     font-size: 30px;
     font-weight: bold;
@@ -79,7 +80,7 @@ nav a:hover {
 
 footer {
     text-align: center;
-    background: url("bg.jpg");
+    background: url("../IMG/bg.jpg");
     padding: 40px 0;
 }
 
@@ -87,4 +88,26 @@ footer {
     color: #FFFFFF;
     font-size: 13px;
     margin: 20px 0;
+}
+
+main {
+    width: 940px;
+    margin: 0 auto;
+}
+
+form {
+    margin: 40px 0;
+}
+
+form label {
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+form input {
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 20px;
+    width: 50%;
 }
