@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Funcionarios
 {
-    public abstract class FuncionarioAutenticavel : Funcionario, IAutenticavel
+    public abstract class FuncionarioAutenticavel : Funcionario, IAutenticavel // interface 
     {
 
         public string Senha { get; set; }

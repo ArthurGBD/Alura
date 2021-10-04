@@ -12,8 +12,7 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            //CalcularBonificacao();
-
+            
             UsarSistema();
 
             Console.ReadLine();
