@@ -16,9 +16,6 @@ namespace ByteBank.Funcionarios
 
         }
 
-        public bool Autenticar(string senha)
-        {
-            return Senha == senha;
-        }
+        public bool Autenticar(string senha) => Senha == senha;
     }
 }

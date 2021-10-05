@@ -1,10 +1,12 @@
-﻿// using _05_ByteBank;
+﻿
 
 namespace ByteBank
 {
     public class ContaCorrente
     {
         public Cliente Titular { get; set; }
+
+        public static int TaxaOperacao { get; private set; }
 
         public static int TotalDeContasCriadas { get; private set; }
 
@@ -53,6 +55,8 @@ namespace ByteBank
             Agencia = agencia;
             Numero = numero;
 
+            TaxaOperacao = 30 / TotalDeContasCriadas;
+
             TotalDeContasCriadas++;
         }
 
@@ -68,10 +72,7 @@ namespace ByteBank
             return true;
         }
 
-        public void Depositar(double valor)
-        {
-            _saldo += valor;
-        }
+        public void Depositar(double valor) => _saldo += valor;
 
 
         public bool Transferir(double valor, ContaCorrente contaDestino)

@@ -12,14 +12,8 @@ namespace ByteBank.Funcionarios
 
         private double _totalBonificacao;
 
-        public void Registrar(Funcionario funcionario)
-        {
-            _totalBonificacao += funcionario.GetBonificacao();
-        }
+        public void Registrar(Funcionario funcionario) => _totalBonificacao += funcionario.Bonificacao;
 
-        public double GetTotalBonificacao()
-        {
-            return _totalBonificacao;
-        }
+        public double GetTotalBonificacao() => _totalBonificacao;
     }
 }
