@@ -49,7 +49,6 @@ namespace ByteBank
             }
         }
 
-
         public ContaCorrente(int agencia, int numero)
         {
             Agencia = agencia;
