@@ -12,20 +12,48 @@ namespace ByteBank
         {
             try
             {
-                Metodo();
+                CarregarContas();
             }
-            catch (DivideByZeroException e)
+            catch (Exception)
             {
-                Console.WriteLine("Não é possível divisão por zero");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.WriteLine(e.StackTrace);
-                Console.WriteLine("Acontenceu um erro!");
+
+                Console.WriteLine("CATCH NO METODO MAIN");
             }
 
+            Console.WriteLine("Excecução finalizada. tecle enter para sair");
             Console.ReadLine();
+        }
+
+        private static void CarregarContas()
+        {
+            using (LeitorDeArquivo leitor = new LeitorDeArquivo("teste.txt"))
+            {
+                leitor.LerProximaLinha();
+            }
+            
+
+            //  *******************************************
+
+            // USANDO O TRY E FINALLY
+
+            //LeitorDeArquivo leitor1 = null;
+            //try
+            //{
+            //    leitor1 = new LeitorDeArquivo("contas1.txt");
+
+            //    leitor1.LerProximaLinha();
+            //    leitor1.LerProximaLinha();
+            //    leitor1.LerProximaLinha();
+
+            //}
+            //finally
+            //{
+            //    Console.WriteLine("Executando o finally");
+            //    if (leitor1 != null)
+            //    {
+            //        leitor1.Dispose();
+            //    }
+            //}
         }
         // Teste com a cadeia de chamada:
         // Metodo -> TestaDivisao - Dividir
@@ -38,7 +66,7 @@ namespace ByteBank
         private static void TestaDivisao(int divisor)
         {
             int resultado = Dividir(10, divisor);
-            Console.WriteLine("O resultado da divisão de 10 por " + divisor + " é" + resultado);
+            Console.WriteLine("Resultado da divisão de 10 por " + divisor + " é" + resultado);
         }
 
         private static int Dividir(int numero, int divisor)
