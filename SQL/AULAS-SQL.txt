@@ -1,0 +1,124 @@
+create table tb_cliente
+(CPF VARCHAR(11),
+NOME VARCHAR(100),
+ENDERECO1 VARCHAR(150),
+ENDERECO2 VARCHAR(150),
+BAIRRO VARCHAR(150),
+CIDADE VARCHAR(50),
+ESTADO VARCHAR(50),
+CEP VARCHAR(50),
+IDADE SMALLINT,
+SEXO VARCHAR(1),
+LIMITE_CREDTIO FLOAT,
+VOLUME_COMPRA FLOAT,
+PRIMEIRA_COMPRA BIT(1))
+
+create table tb_vendedores
+(MATRICULA VARCHAR(5),
+NOME VARCHAR(100),
+PERCENTUAL_COMISSAO FLOAT
+)
+
+create table tb_produtos
+
+(PRODUTOS varchar(20),
+NOME varchar(150),
+EMABALGEM VARCHAR(50),
+TAMANHO VARCHAR(50),
+SABOR VARCHAR(50), 
+PRECO_LISTA FLOAT)
+
+USE sucos;
+
+drop table tb_produtos1;
+
+insert into tb_produtos(
+PRODUTOS,
+NOME,
+EMBALAGEM,
+TAMANHO,
+SABOR,
+PRECO_LISTA
+) values(
+'1040107', 'Light - 350ml - Melancia ', 'Lata', '350ml',
+'Melancia', 4.56
+)
+
+insert into tb_vendedores
+(
+MATRICULA,
+NOME,
+PERCENTUAL_COMISSAO
+)
+values
+(
+'00233',
+'João Geraldo da Fonseca',
+0.10
+)
+
+use sucos;
+
+update tb_produtos set EMBALAGEM ='Lata', PRECO_LISTA = 2.46
+where PRODUTOS = '544931';
+
+update tb_produtos set EMBALAGEM ='Garrafa'
+where PRODUTOS = '1078680';
+
+select * FROM tb_produtos;
+
+USE sucos;
+
+update tb_vendedores set PERCENTUAL_COMISSAO = 0.11
+WHERE MATRICULA = '00236';
+
+
+update tb_vendedores set NOME = 'José Geraldo da fonseca Junior'
+WHERE MATRICULA = '00233';
+
+delete from tb_vendedores where MATRICULA = '00235';
+
+alter table tb_cliente add primary key(CPF);
+
+alter table tb_cliente add column(DATA_NASCIMENTO date);
+
+insert into tb_cliente (
+CPF, NOME, ENDERECO1, ENDERECO2, BAIRRO, CIDADE, ESTADO,
+CEP, IDADE, SEXO, LIMITE_CREDTIO, VOLUME_COMPRA,
+PRIMEIRA_COMPRA, DATA_NASCIMENTO) 
+values(
+'123456789', 'Arthur','RUA', ' ', 'BAIRRO', 'CIDADE', 'ESTADO',
+'123456', 21, 'M', 1000.00, 2000, 0, '1989-10-05');
+
+SELECT CPF, NOME FROM tbcliente LIMIT 5;
+
+SELECT CPF AS CPF_CLIENTE, NOME AS NOME_CLIENTE FROM tbcliente;
+
+UPDATE tbproduto SET SABOR = 'Cítricos' WHERE SABOR = 'Limão';
+
+SELECT * FROM tbcliente WHERE IDADE = 22;
+
+SELECT * FROM tbcliente WHERE IDADE > 22;
+
+SELECT * FROM tbcliente WHERE IDADE < 22;
+
+SELECT * FROM tbcliente WHERE IDADE <= 22;
+
+SELECT * FROM tbcliente WHERE IDADE <> 22;
+
+SELECT * FROM tbcliente WHERE NOME >= 'Fernando Cavalcante';
+
+SELECT * FROM tbcliente WHERE NOME <> 'Fernando Cavalcante';
+
+SELECT * FROM tbproduto WHERE PRECO_LISTA BETWEEN 16.007 AND 16.009;
+
+SELECT * FROM tbcliente WHERE YEAR(DATA_NASCIMENTO) = 1995;
+
+SELECT * FROM tbcliente WHERE MONTH(DATA_NASCIMENTO) = 10;
+
+
+
+
+
+
+
