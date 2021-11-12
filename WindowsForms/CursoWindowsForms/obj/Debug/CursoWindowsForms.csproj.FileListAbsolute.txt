@@ -1,0 +1,11 @@
+C:\Users\Suporte-AH\Documents\GitHub\Alura\WindowsForms\CursoWindowsForms\bin\Debug\CursoWindowsForms.exe.config
+C:\Users\Suporte-AH\Documents\GitHub\Alura\WindowsForms\CursoWindowsForms\bin\Debug\CursoWindowsForms.exe
+C:\Users\Suporte-AH\Documents\GitHub\Alura\WindowsForms\CursoWindowsForms\bin\Debug\CursoWindowsForms.pdb
+C:\Users\Suporte-AH\Documents\GitHub\Alura\WindowsForms\CursoWindowsForms\obj\Debug\CursoWindowsForms.csproj.AssemblyReference.cache
+C:\Users\Suporte-AH\Documents\GitHub\Alura\WindowsForms\CursoWindowsForms\obj\Debug\CursoWindowsForms.Properties.Resources.resources
+C:\Users\Suporte-AH\Documents\GitHub\Alura\WindowsForms\CursoWindowsForms\obj\Debug\CursoWindowsForms.csproj.GenerateResource.cache
+C:\Users\Suporte-AH\Documents\GitHub\Alura\WindowsForms\CursoWindowsForms\obj\Debug\CursoWindowsForms.csproj.CoreCompileInputs.cache
+C:\Users\Suporte-AH\Documents\GitHub\Alura\WindowsForms\CursoWindowsForms\obj\Debug\CursoWindowsForms.exe
+C:\Users\Suporte-AH\Documents\GitHub\Alura\WindowsForms\CursoWindowsForms\obj\Debug\CursoWindowsForms.pdb
+C:\Users\Suporte-AH\Documents\GitHub\Alura\WindowsForms\CursoWindowsForms\obj\Debug\CursoWindowsForms.F_HelloWorld.resources
+C:\Users\Suporte-AH\Documents\GitHub\Alura\WindowsForms\CursoWindowsForms\obj\Debug\CursoWindowsForms.F_DemonstracaoKey.resources
