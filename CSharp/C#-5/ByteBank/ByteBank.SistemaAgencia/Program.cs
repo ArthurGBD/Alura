@@ -12,6 +12,9 @@ namespace ByteBank.SistemaAgencia
         static void Main(string[] args)
         {
             ContaCorrente conta = new ContaCorrente();
+            int arthur;
+            int gulhermeAnjos;
+
         }
     }
 }
