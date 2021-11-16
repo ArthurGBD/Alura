@@ -1,0 +1,16 @@
+D:\code_projetos\gitHub\Alura\WindowsForms\CursoWindowsForms\bin\Release\CursoWindowsForms.exe.config
+D:\code_projetos\gitHub\Alura\WindowsForms\CursoWindowsForms\bin\Release\CursoWindowsForms.exe
+D:\code_projetos\gitHub\Alura\WindowsForms\CursoWindowsForms\bin\Release\CursoWindowsForms.pdb
+D:\code_projetos\gitHub\Alura\WindowsForms\CursoWindowsForms\obj\Release\CursoWindowsForms.csprojAssemblyReference.cache
+D:\code_projetos\gitHub\Alura\WindowsForms\CursoWindowsForms\obj\Release\CursoWindowsForms.F_DemonstracaoKey.resources
+D:\code_projetos\gitHub\Alura\WindowsForms\CursoWindowsForms\obj\Release\CursoWindowsForms.F_HelloWorld.resources
+D:\code_projetos\gitHub\Alura\WindowsForms\CursoWindowsForms\obj\Release\CursoWindowsForms.F_Mascara.resources
+D:\code_projetos\gitHub\Alura\WindowsForms\CursoWindowsForms\obj\Release\CursoWindowsForms.F_Principal.resources
+D:\code_projetos\gitHub\Alura\WindowsForms\CursoWindowsForms\obj\Release\CursoWindowsForms.F_ValidaCPF.resources
+D:\code_projetos\gitHub\Alura\WindowsForms\CursoWindowsForms\obj\Release\CursoWindowsForms.F_ValidaCPF2.resources
+D:\code_projetos\gitHub\Alura\WindowsForms\CursoWindowsForms\obj\Release\CursoWindowsForms.Properties.Resources.resources
+D:\code_projetos\gitHub\Alura\WindowsForms\CursoWindowsForms\obj\Release\CursoWindowsForms.F_ValidaSenha.resources
+D:\code_projetos\gitHub\Alura\WindowsForms\CursoWindowsForms\obj\Release\CursoWindowsForms.csproj.GenerateResource.cache
+D:\code_projetos\gitHub\Alura\WindowsForms\CursoWindowsForms\obj\Release\CursoWindowsForms.csproj.CoreCompileInputs.cache
+D:\code_projetos\gitHub\Alura\WindowsForms\CursoWindowsForms\obj\Release\CursoWindowsForms.exe
+D:\code_projetos\gitHub\Alura\WindowsForms\CursoWindowsForms\obj\Release\CursoWindowsForms.pdb

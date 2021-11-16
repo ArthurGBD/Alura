@@ -29,6 +29,7 @@ namespace CursoWindowsForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_DemonstracaoKey));
             this.tb_Input = new System.Windows.Forms.TextBox();
             this.tb_Msg = new System.Windows.Forms.TextBox();
             this.btn_Reset = new System.Windows.Forms.Button();
@@ -111,6 +112,7 @@ namespace CursoWindowsForms
             this.Controls.Add(this.btn_Reset);
             this.Controls.Add(this.tb_Msg);
             this.Controls.Add(this.tb_Input);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_DemonstracaoKey";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DemonstracaoKey";

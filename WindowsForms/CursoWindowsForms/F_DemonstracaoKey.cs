@@ -19,7 +19,16 @@ namespace CursoWindowsForms
 
         private void tb_Input_KeyDown(object sender, KeyEventArgs e)
         {
-            tb_Msg.AppendText("\r\n");
+            tb_Msg.AppendText("\r\n" + "Pressionei a tecla: " + e.KeyCode + "\r\n");
+            tb_Msg.AppendText("\t" + "Código da tecla: " + ((int)e.KeyCode) + "\r\n");
+            tb_Msg.AppendText("\r\n" + "Nome da tecla: " + e.KeyData + "\r\n");
+            lb_Lower.Text = e.KeyCode.ToString().ToLower();
+            lb_Upper.Text = e.KeyCode.ToString().ToUpper();
+
+            tb_Msg.Text = "";
+            tb_Input.Text = "";
+            lb_Lower.Text = "";
+            lb_Upper.Text = "";
         }
     }
 }
