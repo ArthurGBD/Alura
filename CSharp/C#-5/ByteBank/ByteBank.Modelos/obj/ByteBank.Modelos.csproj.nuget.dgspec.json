@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Suporte-AH\\Documents\\GitHub\\Alura\\CSharp\\C#-5\\ByteBank\\ByteBank.Modelos\\ByteBank.Modelos.csproj": {}
+    "D:\\code_projetos\\gitHub\\Alura\\CSharp\\C#-5\\ByteBank\\ByteBank.Modelos\\ByteBank.Modelos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Suporte-AH\\Documents\\GitHub\\Alura\\CSharp\\C#-5\\ByteBank\\ByteBank.Modelos\\ByteBank.Modelos.csproj": {
+    "D:\\code_projetos\\gitHub\\Alura\\CSharp\\C#-5\\ByteBank\\ByteBank.Modelos\\ByteBank.Modelos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Suporte-AH\\Documents\\GitHub\\Alura\\CSharp\\C#-5\\ByteBank\\ByteBank.Modelos\\ByteBank.Modelos.csproj",
+        "projectUniqueName": "D:\\code_projetos\\gitHub\\Alura\\CSharp\\C#-5\\ByteBank\\ByteBank.Modelos\\ByteBank.Modelos.csproj",
         "projectName": "ByteBank.Modelos",
-        "projectPath": "C:\\Users\\Suporte-AH\\Documents\\GitHub\\Alura\\CSharp\\C#-5\\ByteBank\\ByteBank.Modelos\\ByteBank.Modelos.csproj",
-        "packagesPath": "C:\\Users\\Suporte-AH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Suporte-AH\\Documents\\GitHub\\Alura\\CSharp\\C#-5\\ByteBank\\ByteBank.Modelos\\obj\\",
+        "projectPath": "D:\\code_projetos\\gitHub\\Alura\\CSharp\\C#-5\\ByteBank\\ByteBank.Modelos\\ByteBank.Modelos.csproj",
+        "packagesPath": "C:\\Users\\artea\\.nuget\\packages\\",
+        "outputPath": "D:\\code_projetos\\gitHub\\Alura\\CSharp\\C#-5\\ByteBank\\ByteBank.Modelos\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Suporte-AH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\artea\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,7 +57,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

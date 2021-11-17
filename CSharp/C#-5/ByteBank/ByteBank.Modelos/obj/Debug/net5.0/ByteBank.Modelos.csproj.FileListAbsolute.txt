@@ -10,3 +10,15 @@ C:\Users\Suporte-AH\Documents\GitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos
 C:\Users\Suporte-AH\Documents\GitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\obj\Debug\net5.0\ByteBank.Modelos.dll
 C:\Users\Suporte-AH\Documents\GitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\obj\Debug\net5.0\ref\ByteBank.Modelos.dll
 C:\Users\Suporte-AH\Documents\GitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\obj\Debug\net5.0\ByteBank.Modelos.pdb
+D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\bin\Debug\net5.0\ByteBank.Modelos.deps.json
+D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\bin\Debug\net5.0\ByteBank.Modelos.dll
+D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\bin\Debug\net5.0\ref\ByteBank.Modelos.dll
+D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\bin\Debug\net5.0\ByteBank.Modelos.pdb
+D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\obj\Debug\net5.0\ByteBank.Modelos.csprojAssemblyReference.cache
+D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\obj\Debug\net5.0\ByteBank.Modelos.GeneratedMSBuildEditorConfig.editorconfig
+D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\obj\Debug\net5.0\ByteBank.Modelos.AssemblyInfoInputs.cache
+D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\obj\Debug\net5.0\ByteBank.Modelos.AssemblyInfo.cs
+D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\obj\Debug\net5.0\ByteBank.Modelos.csproj.CoreCompileInputs.cache
+D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\obj\Debug\net5.0\ByteBank.Modelos.dll
+D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\obj\Debug\net5.0\ref\ByteBank.Modelos.dll
+D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\obj\Debug\net5.0\ByteBank.Modelos.pdb
