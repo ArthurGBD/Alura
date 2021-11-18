@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
     <title>Home | Apperia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,12 +13,13 @@
         rel="stylesheet">
     <link href="css/cabecalho.css" rel="stylesheet">
     <link href="css/chamada.css" rel="stylesheet">
+    <link href="css/destaque.css" rel="stylesheet">
     <link href="css/reset.css" rel="stylesheet">
 </head>
 
 <body>
-    <header class="cabecalho"> 
-        <img src="img/logo-apeperia.svg" alt="Logo da Apperia" class="cabecalho__logo" >
+    <header class="cabecalho container">
+        <img src="img/logo-apeperia.svg" alt="Logo da Apperia" class="cabecalho__logo">
         <nav class="cabecalho_navegacao">
             <ul>
                 <li class="cabecalho__link"><a href="#">Sobre</a></li>
@@ -30,10 +32,26 @@
         </nav>
     </header>
     <main>
-        <section class="chamada">
-            <h1 class="chamada__titulo">Aplciativos na medida</h1>
-            <p class="chamada__texto">Apeperia tem um jeito inovador de comparar e montar aplicativos para pequenas e médias empresas.</p>
-            <a class="chamada__botao" href="#">Conheça os planos</a>
+        <section class="chamada container">
+            <h1 class="chamada__titulo">Aplicativos na medida</h1>
+            <p class="chamada__texto">Apeperia tem um jeito inovador de comparar e montar aplicativos para pequenas e
+                médias empresas.</p>
+            <a class="chamada__botao botao" href="#">Conheça os planos</a>
+        </section>
+        <section class="destaques container">
+            <h2 class="destaques__titulo">Destaques</h2>
+            <a href="#">
+                <figure class="destaques__painel">
+                    <img src="img/comecando-criar-logotipo.png" alt="Painel do post sobre criação de logotipo" class="destques_painel-imagem">
+                    <figcaption class="destaques_painel-texto">Conheça as primeiras etapas para a criação de um logotipo</figcaption>
+                </figure>
+            </a>
+            <a href="#">
+                <figure class="destaques__painel">
+                    <img src="img/dicas-fotografia.png" alt="Painel do post sobre fotografia com celular" class="destques_painel-imagem">
+                    <figcaption class="destaques_painel-texto">Veja dicas de como fotografar usando seu celular</figcaption>
+                </figure>
+            </a><a href="#" class="destaques_botao botao">Receber destaques por email</a>
         </section>
     </main>
 </body>
