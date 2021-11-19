@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "06ecdabb-a2e6-4c78-bc87-197f681c6129": {
+      "ProjectGuid": "06ecdabb-a2e6-4c78-bc87-197f681c6129",
+      "DisplayName": "ByteBank.SistemaAgencia",
+      "ColorIndex": 0
+    },
+    "1acb37cc-944a-49f2-acf0-9775ce892c41": {
+      "ProjectGuid": "1acb37cc-944a-49f2-acf0-9775ce892c41",
+      "DisplayName": "ByteBank.Modelos",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
