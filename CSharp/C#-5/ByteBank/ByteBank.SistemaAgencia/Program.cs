@@ -14,7 +14,8 @@ namespace ByteBank.SistemaAgencia
         {
             ContaCorrente conta = new ContaCorrente(847, 489754);
 
-            Funcionario newFunc = null ;
+            FuncionarioAutenticavel carlos = null;
+            carlos.Autenticar("kfjdaskfsfs");
             
             Console.WriteLine(conta.Numero);
 

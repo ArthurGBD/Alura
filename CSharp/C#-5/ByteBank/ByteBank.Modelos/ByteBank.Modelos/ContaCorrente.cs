@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Modelos
 {
+    /// <summary>
+    /// Define uma Conta Corrente do banco ByteBanck.
+    /// </summary>
     public class ContaCorrente
     {
         private static int TaxaOperacao;
 
+        string[] arthur = new string[1];
         public static int TotalDeContasCriadas { get; private set; }
 
         public Cliente Titular { get; set; }
@@ -38,6 +42,12 @@ namespace ByteBank.Modelos
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="agencia"></param>
+        /// <param name="numero"></param>
+        /// <exception cref="ArgumentException"></exception>
         public ContaCorrente(int agencia, int numero)
         {
             if (numero <= 0)
@@ -56,7 +66,12 @@ namespace ByteBank.Modelos
             TotalDeContasCriadas++;
             TaxaOperacao = 30 / TotalDeContasCriadas;
         }
-
+        /// <summary>
+        /// Este método realiza a transação "SACAR" para Conta Corrente
+        /// </summary>
+        /// <param name="valor"></param>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="SaldoInsuficienteException"></exception>
         public void Sacar(double valor)
         {
             if (valor < 0)
@@ -72,7 +87,11 @@ namespace ByteBank.Modelos
 
             _saldo -= valor;
         }
-
+        // Comentario
+        /// <summary>
+        /// Guilherme Aoki
+        /// </summary>
+        /// <param name="valor"></param>
         public void Depositar(double valor)
         {
             _saldo += valor;
