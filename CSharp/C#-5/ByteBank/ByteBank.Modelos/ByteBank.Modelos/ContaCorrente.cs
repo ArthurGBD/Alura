@@ -43,10 +43,10 @@ namespace ByteBank.Modelos
         }
 
         /// <summary>
-        /// 
+        /// Cria uma instancia de ContaCorrente com os argumentos informados utilizados.
         /// </summary>
-        /// <param name="agencia"></param>
-        /// <param name="numero"></param>
+        /// <param name="agencia"> Representa o valor da propriedade <see cref="Agencia"/> e deve possuir um valor maior que zero</param>
+        /// <param name="numero">Representa o valor da propriedade <see cref="Numero"/> e deve possuir um valor maior que zero</param>
         /// <exception cref="ArgumentException"></exception>
         public ContaCorrente(int agencia, int numero)
         {

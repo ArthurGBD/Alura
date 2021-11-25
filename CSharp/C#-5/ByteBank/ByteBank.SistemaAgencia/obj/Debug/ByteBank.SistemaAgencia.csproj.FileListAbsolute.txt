@@ -9,3 +9,7 @@ C:\Users\Suporte-AH\Documents\GitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Sistema
 C:\Users\Suporte-AH\Documents\GitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.exe
 C:\Users\Suporte-AH\Documents\GitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.pdb
 C:\Users\Suporte-AH\Documents\GitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.SistemaAgencia\bin\Debug\ByteBank.Modelos.dll
+D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.csprojAssemblyReference.cache
+D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.csproj.CoreCompileInputs.cache
+D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.exe
+D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.pdb
