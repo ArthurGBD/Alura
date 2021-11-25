@@ -67,9 +67,9 @@ namespace ByteBank.Modelos
             TaxaOperacao = 30 / TotalDeContasCriadas;
         }
         /// <summary>
-        /// Este método realiza a transação "SACAR" para Conta Corrente
+        /// Realiza o saque e atualzia o valor da propriedade <see cref="Saldo"/>
         /// </summary>
-        /// <param name="valor"></param>
+        /// <param name="valor"> Representa  o valor do saque, deve ser maior que zero e menor que p <see cref="Saldo"/></param>
         /// <exception cref="ArgumentException"></exception>
         /// <exception cref="SaldoInsuficienteException"></exception>
         public void Sacar(double valor)
@@ -87,11 +87,6 @@ namespace ByteBank.Modelos
 
             _saldo -= valor;
         }
-        // Comentario
-        /// <summary>
-        /// Guilherme Aoki
-        /// </summary>
-        /// <param name="valor"></param>
         public void Depositar(double valor)
         {
             _saldo += valor;

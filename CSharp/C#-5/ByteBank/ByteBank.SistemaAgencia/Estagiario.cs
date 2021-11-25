@@ -7,21 +7,22 @@ using System.Threading.Tasks;
 
 namespace ByteBank.SistemaAgencia
 {
-    internal class Estagiario : Funcionario
+    public class Estagiario : Funcionario
     {
-        public Estagiario(double salario, string cpf) 
-            :base(salario, cpf)
-        { 
+        public Estagiario(double salario, string cpf)
+            : base(salario, cpf)
+        {
 
         }
+
         public override void AumentarSalario()
         {
-            //
+            // Qualquer código
         }
 
         protected override double GetBonificacao()
         {
-            //
+            throw new NotImplementedException();
         }
     }
 }

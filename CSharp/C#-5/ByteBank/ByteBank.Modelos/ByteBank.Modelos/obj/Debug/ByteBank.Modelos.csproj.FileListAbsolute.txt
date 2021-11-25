@@ -10,3 +10,4 @@ D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\ByteBank.Mod
 D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\ByteBank.Modelos\obj\Debug\ByteBank.Modelos.csproj.CoreCompileInputs.cache
 D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\ByteBank.Modelos\obj\Debug\ByteBank.Modelos.dll
 D:\code_projetos\gitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\ByteBank.Modelos\obj\Debug\ByteBank.Modelos.pdb
+C:\Users\Suporte-AH\Documents\GitHub\Alura\CSharp\C#-5\ByteBank\ByteBank.Modelos\ByteBank.Modelos\bin\Debug\ByteBank.Modelos.xml
