@@ -70,8 +70,8 @@ namespace ByteBank.Modelos
         /// Realiza o saque e atualzia o valor da propriedade <see cref="Saldo"/>
         /// </summary>
         /// <param name="valor"> Representa  o valor do saque, deve ser maior que zero e menor que p <see cref="Saldo"/></param>
-        /// <exception cref="ArgumentException"></exception>
-        /// <exception cref="SaldoInsuficienteException"></exception>
+        /// <exception cref="ArgumentException"> Exceção lançada quando um valor negativo é utilizado no argumento <paramref name="valor"/></exception>
+        /// <exception cref="SaldoInsuficienteException"> Exceção lançada quando o <paramref name="valor"/> é maior que o valor da propriedade <see cref="Saldo"/></exception>
         public void Sacar(double valor)
         {
             if (valor < 0)
