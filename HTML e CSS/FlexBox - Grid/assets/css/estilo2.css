@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.corpo {
+    background-color: #444444;
+    padding: 8px;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.cabecalho {
+    background-color: #cc2a2a;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 8px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    /* grid-column: span 4; */
+}
+
+.lateral {
+    background-color: #45cc2a;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 8px;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    /* grid-row: span 3; */
+}
+
+.meio {
+    background-color: #2aa6cc;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 8px;
+    grid-column: 2 / 4;
+    grid-row: 2 / 5;
+    /* grid-column: span 2;
+    grid-row: span 3; */
+}
+
+.direita-cima {
+    background-color: #352acc;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 8px;
+    grid-column: 4;
+}
+
+.direita-baixo {
+    background-color: #cc2a96;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 8px;
+    grid-row: 3 / 5;
+    grid-column: 4;
+    /* grid-row: span 2; */
+}
