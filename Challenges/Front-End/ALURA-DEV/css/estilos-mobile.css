@@ -1,0 +1,38 @@
+body {
+    background-color: #051d3b;
+}
+
+.mobile-header {
+    position: absolute;
+    width: 95%;
+    height: 56px;
+    left: 16px;
+    top: 16px;
+
+}
+
+.logo {
+    position: absolute;
+    width: 145px;
+    height: 34.05px;
+    left: 0px;
+    top: 11px;
+
+}
+
+
+.mobile-header-logo-alura {
+    position: absolute;
+    width: 78px;
+    height: 19px;
+    left: 0px;
+    top: 18.7px;
+}
+
+.mobile-header-logo-dev {
+    position: absolute;
+    width: 60px;
+    height: 34.05px;
+    left: 85px;
+    top: 11px;
+}

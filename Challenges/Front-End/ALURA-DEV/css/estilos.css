@@ -1,0 +1,121 @@
+body {
+    box-sizing: border-box;
+    background-color: #051d3b;
+}
+
+.header-desktop {
+    position: absolute;
+    width: 1376px;
+    height: 56px;
+    left: 32px;
+    top: 3px;
+}
+
+.input-text-buscar {
+
+    height: 56px;
+    width: 752px;
+    left: 312px;
+    top: 0px;
+    border-radius: 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: absolute;
+    left: 22.67%;
+    right: 22.67%;
+    top: 0%;
+    bottom: 0%;
+}
+
+.base-input {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: static;
+    width: 752px;
+    height: 56px;
+    left: 0px;
+    top: 0px;
+
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 14px;
+
+    position: static;
+    width: 752px;
+    height: 56px;
+    left: 0px;
+    top: 0px;
+}
+
+.label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 0px;
+
+    position: static;
+    height: 56px;
+    left: 14px;
+    right: 14px;
+    top: calc(50% - 56px/2);
+}
+
+.label-in {
+    position: static;
+    width: 123px;
+    height: 24px;
+    left: calc(50% - 123px/2 - 300.5px);
+    top: calc(50% - 24px/2);
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+
+    /* Neutral/$white */
+
+    color: #FFFFFF;
+
+    opacity: 0.64;
+}
+
+.logo {
+    position: absolute;
+    width: 145px;
+    height: 34.05px;
+    left: 0px;
+    top: 12px;
+}
+
+.header-desktop-logo-alura {
+    position: absolute;
+    width: 78px;
+    height: 19px;
+    left: 0px;
+    top: 19.7px;
+}
+
+.header-desktop-logo-dev {
+    position: absolute;
+    width: 60px;
+    height: 34.05px;
+    left: 85px;
+    top: 11px;
+}
