@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-        
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alura Dev | Challenge Front-End</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/reset.css">
 </head>
-<header class="header-desktop">
-    <div class="logo">
-    <img src="../ALURA-DEV/img/logo-alura.svg" alt="" class="header-desktop-logo-alura">
-    <img src="../ALURA-DEV/img/Subtract-desktop.svg" alt="" class="header-desktop-logo-dev">
-    <label for="buscar" class="input-text-buscar label">Buscar por algo...</label>
-    <input type="text" class="base-input input" name="buscar">
-    </div>
-</header>
 
 <body>
+    <header class="header-desktop">
+        <section class="base">
+            <input type="text" class="base input" name="buscar">
+            <label for="buscar" class="label">Busque por algo</label>
+            <div class="perfil">
+                <img src="../ALURA-DEV/img/photo-profile.svg" alt="" class="foto__perfil">
+                <p class="nome__perfil nome__perfil--1">Harry</p>
+            </div>
+        </section>
+        <img src="../ALURA-DEV/img/logo-alura.svg" alt="" class="header-desktop-logo-alura">
+        <img src="../ALURA-DEV/img/Subtract-desktop.svg" alt="" class="header-desktop-logo-dev">
+    </header>
+    <section class="menu__navegacao">
+        <h3 class="menu__navegacao--titulo">Menu</h3>
+        <a href="#" class="item__paginas--editor-codigo">
+            <img src="../ALURA-DEV/img/icon-background-code.svg" class="icon__menu--code" alt="">
+            <p class="item__paginas--editor--texto">Editor de código</p>
+        </a>
+        <a href="#" class="item__paginas--comunidade">
+            <img src="../ALURA-DEV/img/icon_comunidade.svg" alt="" class="icon__menu--comunidade">
+            <p class="item__paginas--comunidade--texto">Comunidade</p>
+        </a>
+    </section>
+    <section class="menu__lateral--direito">
+        <h3 class="menu__lateral_direito--titulo-1">SEU PROJETO</h3>
+        <input type="text" class="menu__lateral_direito--input-1" name="buscar-projeto">
+        <label for="buscar-projeto" class="menu__lateral_direito--texto-1">Nome do seu projeto</label>
+        <input type="text" class="menu__lateral_direito--input-2" name="descricao-projeto">
+        <label for="descricao-projeto" class="menu__lateral_direito--texto-2">Descrição do seu projeto</label>
 
+        <h3 class="menu__lateral_direito--titulo-2">PERSONALIZAÇÃO</h3>
+    </section>
 </body>
 
 </html>
