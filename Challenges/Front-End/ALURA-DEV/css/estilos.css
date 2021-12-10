@@ -322,7 +322,7 @@ body {
     height: 18px;
     left: 66.66%;
     /* left: 1136px; */
-    top: 354px;
+    top: 51.9%;
 
     font-family: Inter;
     font-style: normal;
@@ -345,7 +345,7 @@ body {
 
     position: absolute;
     width: 272px;
-    height: 56px;
+    height: 66px;
     left: 66.66%;
     top: 22%;
 
@@ -363,9 +363,28 @@ body {
 
     position: absolute;
     width: 272px;
-    height: 80px;
+    height: 85px;
     left: 66.66%;
     top: 34%;
+
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    border: rgba(255, 255, 255, 0.16);
+}
+
+
+.menu__lateral_direito--input-3 {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: absolute;
+    width: 272px;
+    height: 66px;
+    left: 66.66%;
+    top: 57%;
 
     background: rgba(255, 255, 255, 0.16);
     border-radius: 8px;
@@ -416,6 +435,93 @@ body {
 
     opacity: 0.64;
 
+}
+
+.menu__lateral_direito--texto-3{
+  
+    position: absolute;
+    width: 159px;
+    height: 24px;
+    left: 67.66%;
+    top: 59.5%;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    /* Neutral/$white */
+
+    color: #FFFFFF;
+
+    opacity: 0.64;
+
+}
+
+.icon__select--input{
+    position: absolute;
+    left: 84.54%;
+    right: 5.15%;
+    top: 60.5%;
+    bottom: 45.98%;
+    width: 15px;
+    height: 8.5px;
+}
+
+.barra__azul--background {
+    position: absolute;
+    width: 272px;
+    height: 60px;
+    left: 66.66%;
+    top: 71.5%;
+
+    background: #051d3b;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.barra__azul{
+    position: absolute;
+    width: 252px;
+    height: 40px;
+    left: 67.14%;
+    top: 72.3%;
+    padding: 1px;
+
+    background: #6BD1FF;
+    border-radius: 6px;
+}
+
+.botao__salvar {
+    position: absolute;
+    width: 272px;
+    height: 56px;
+    left: 66.66%;
+    top: 83.6%;
+
+    background: #5081fb;
+    border-radius: 8px;
+}
+
+.botao__salvar--texto{
+    position: absolute;
+    left: 30.67%;
+    right: 30.72%;
+    top: 28.57%;
+    bottom: 28.57%;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+
+    text-align: center;
+
+    color: #051d3b;
 }
 
 /* .logo {
