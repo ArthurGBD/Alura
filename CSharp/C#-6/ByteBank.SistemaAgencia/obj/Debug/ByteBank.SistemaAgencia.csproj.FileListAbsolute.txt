@@ -1,0 +1,12 @@
+D:\code_projetos\gitHub\Alura\CSharp\C#-6\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.csproj.AssemblyReference.cache
+D:\code_projetos\gitHub\Alura\CSharp\C#-6\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.csproj.SuggestedBindingRedirects.cache
+D:\code_projetos\gitHub\Alura\CSharp\C#-6\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.csproj.CoreCompileInputs.cache
+D:\code_projetos\gitHub\Alura\CSharp\C#-6\ByteBank.SistemaAgencia\bin\Debug\ByteBank.SistemaAgencia.exe.config
+D:\code_projetos\gitHub\Alura\CSharp\C#-6\ByteBank.SistemaAgencia\bin\Debug\ByteBank.SistemaAgencia.exe
+D:\code_projetos\gitHub\Alura\CSharp\C#-6\ByteBank.SistemaAgencia\bin\Debug\ByteBank.SistemaAgencia.pdb
+D:\code_projetos\gitHub\Alura\CSharp\C#-6\ByteBank.SistemaAgencia\bin\Debug\ByteBank.Modelos.dll
+D:\code_projetos\gitHub\Alura\CSharp\C#-6\ByteBank.SistemaAgencia\bin\Debug\ByteBank.Modelos.pdb
+D:\code_projetos\gitHub\Alura\CSharp\C#-6\ByteBank.SistemaAgencia\bin\Debug\ByteBank.Modelos.xml
+D:\code_projetos\gitHub\Alura\CSharp\C#-6\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.csproj.CopyComplete
+D:\code_projetos\gitHub\Alura\CSharp\C#-6\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.exe
+D:\code_projetos\gitHub\Alura\CSharp\C#-6\ByteBank.SistemaAgencia\obj\Debug\ByteBank.SistemaAgencia.pdb
