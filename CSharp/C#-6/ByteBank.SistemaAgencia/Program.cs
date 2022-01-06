@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using ByteBank.Modelos;
 using ByteBank.Modelos.Funcionarios;
@@ -12,23 +13,34 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            string urlTeste = "https:www.bytebank.com/cambio";
-            string indiceByteBank = "http://www.bytebank.com";
 
-            Console.WriteLine(urlTeste.StartsWith("http://www.bytebank.com"));
-            Console.WriteLine(urlTeste.EndsWith("cambio/"));
+            string padrao = "[0-9][0-9][0-9][0-9][ - ][0123456789][0123456789][0123456789][0123456789]";
+
+            string textoDeTeste = "Meu nome é Arthur, me ligue em 4784-4546";
+
+            Match resultado = Regex.Match(textoDeTeste, padrao);
+
+            Console.WriteLine(resultado.Value);
+            //Console.WriteLine(Regex.IsMatch(textoDeTeste, padrao));
+
+
+            //string urlTeste = "https:www.bytebank.com/cambio";
+            //string indiceByteBank = "http://www.bytebank.com";
+
+            //Console.WriteLine(urlTeste.StartsWith("http://www.bytebank.com"));
+            //Console.WriteLine(urlTeste.EndsWith("cambio/"));
            
-            Console.WriteLine(urlTeste.Contains("bytebank"));
+            //Console.WriteLine(urlTeste.Contains("bytebank"));
 
-            string urlParametros = "http://www.bytebank.com/cambio?moedaOrigem=real&moedaDestino=dolar";
-            ExtratorValorDeArgumentosURL extratorDeValores = new ExtratorValorDeArgumentosURL(urlParametros);
+            //string urlParametros = "http://www.bytebank.com/cambio?moedaOrigem=real&moedaDestino=dolar";
+            //ExtratorValorDeArgumentosURL extratorDeValores = new ExtratorValorDeArgumentosURL(urlParametros);
 
-            string valor = extratorDeValores.GetValor("moedaDestino");
-            Console.WriteLine("Valor de moedaDestino: " + valor); 
+            //string valor = extratorDeValores.GetValor("moedaDestino");
+            //Console.WriteLine("Valor de moedaDestino: " + valor); 
 
-            string valorMoedaOrigem = extratorDeValores.GetValor("moedaOrigem");
-            Console.WriteLine("Valor de moedaDestino: " + valor);
-            Console.WriteLine(extratorDeValores.GetValor("valor"));
+            //string valorMoedaOrigem = extratorDeValores.GetValor("moedaOrigem");
+            //Console.WriteLine("Valor de moedaDestino: " + valor);
+            //Console.WriteLine(extratorDeValores.GetValor("valor"));
 
             //// pagina?argumentos
             //// 012345678
@@ -68,7 +80,6 @@ namespace ByteBank.SistemaAgencia
             //Console.WriteLine(url);
             //string argumentos = url.Substring(indiceInterrogacao + 1);
             //Console.WriteLine(argumentos);
-
 
             Console.ReadLine();
         }
