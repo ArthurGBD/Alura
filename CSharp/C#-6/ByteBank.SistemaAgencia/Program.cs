@@ -13,14 +13,27 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+            string padrao = "Sala [A-G][-]?[0123456789]{2}";
 
-            string padrao = "[0-9][0-9][0-9][0-9][ - ][0123456789][0123456789][0123456789][0123456789]";
+            Console.WriteLine(Regex.IsMatch("Sala G345", padrao));
+            Console.WriteLine(Regex.IsMatch("Sala J-001", padrao));
+            Console.WriteLine(Regex.IsMatch("Sala a004", padrao));
+            Console.WriteLine(Regex.IsMatch("Sala C004", padrao));
+            Console.WriteLine(Regex.IsMatch("Minha sala é a sala G34", padrao));
+            Console.WriteLine(Regex.IsMatch("Minha sala é a Sala G-34", padrao));
 
-            string textoDeTeste = "Meu nome é Arthur, me ligue em 4784-4546";
+            // "[0-9][0-9][0-9][0-9][ - ][0-9][0-9][0-9][0-9]"; // QUANTIFICADORES
+            // "[0-9]{4}[ - ][0-9]{4}";
+            // "[0-9]{4,5}[ - ][0-9]{4}";
+            // "[0-9]{4,5}[ - ]{0,1}[0-9]{4}";
+            // "[0-9]{4,5}-{0,1}[0-9]{4}";
+            //string padrao = "[0-9]{4,5}-?[0-9]{4}";
 
-            Match resultado = Regex.Match(textoDeTeste, padrao);
+            //string textoDeTeste = "Meu nome é Arthur, me ligue em 4784-4546";
 
-            Console.WriteLine(resultado.Value);
+            //Match resultado = Regex.Match(textoDeTeste, padrao);
+
+            //Console.WriteLine(resultado.Value);
             //Console.WriteLine(Regex.IsMatch(textoDeTeste, padrao));
 
 
