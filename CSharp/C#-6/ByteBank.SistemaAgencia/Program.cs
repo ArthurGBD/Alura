@@ -13,14 +13,41 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            string padrao = "Sala [A-G][-]?[0123456789]{2}";
 
-            Console.WriteLine(Regex.IsMatch("Sala G345", padrao));
-            Console.WriteLine(Regex.IsMatch("Sala J-001", padrao));
-            Console.WriteLine(Regex.IsMatch("Sala a004", padrao));
-            Console.WriteLine(Regex.IsMatch("Sala C004", padrao));
-            Console.WriteLine(Regex.IsMatch("Minha sala é a sala G34", padrao));
-            Console.WriteLine(Regex.IsMatch("Minha sala é a Sala G-34", padrao));
+            Cliente cliente_1 = new Cliente();
+            cliente_1.Nome = "Carlos";
+            cliente_1.CPF = "458.623.120-03";
+            cliente_1.Profissao = "Designer";
+
+            Cliente cliente_2 = new Cliente();
+            cliente_2.Nome = "Carlos";
+            cliente_2.CPF = "458.623.120-03";
+            cliente_2.Profissao = "Designer";
+
+            ContaCorrente contaCorrente = new ContaCorrente(456, 1);
+
+            if (cliente_1.Equals(cliente_2))
+            {
+                Console.WriteLine("São iguais!");
+            }
+            else
+            {
+                Console.WriteLine("Não são iguais!");
+            }
+
+            //object conta = new ContaCorrente(1, 2);
+
+            //Console.WriteLine(conta);
+
+
+            //string padrao = "Sala [A-G][-]?[0123456789]{2}";
+
+            //Console.WriteLine(Regex.IsMatch("Sala G345", padrao));
+            //Console.WriteLine(Regex.IsMatch("Sala J-001", padrao));
+            //Console.WriteLine(Regex.IsMatch("Sala a004", padrao));
+            //Console.WriteLine(Regex.IsMatch("Sala C004", padrao));
+            //Console.WriteLine(Regex.IsMatch("Minha sala é a sala G34", padrao));
+            //Console.WriteLine(Regex.IsMatch("Minha sala é a Sala G-34", padrao));
 
             // "[0-9][0-9][0-9][0-9][ - ][0-9][0-9][0-9][0-9]"; // QUANTIFICADORES
             // "[0-9]{4}[ - ][0-9]{4}";
