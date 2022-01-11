@@ -12,13 +12,23 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            
+
+            Lista<int> idades = new Lista<int>();
+
+            idades.Adicionar(1);
+            idades.AdicionarVarios(1, 2, 3);
+
+            int idadeSoma = 0;
+
+            for (int i = 0; i < idades.Tamanho; i++)
+            {
+                int idadeAtual = idades[i];
+            }
+
             ListaDeContaCorrente lista = new ListaDeContaCorrente();
 
-            
-
-            lista.MeuMetodoOpcional();
-            lista.MeuMetodoOpcional(numero: 10);
+            //lista.MeuMetodoOpcional();
+            //lista.MeuMetodoOpcional(numero: 10);
 
             lista.Adicionar(new ContaCorrente(37, 54656565));
             lista.Adicionar(new ContaCorrente(27, 5465656));
@@ -31,7 +41,48 @@ namespace ByteBank.SistemaAgencia
             lista.Adicionar(new ContaCorrente(17, 546565));
             lista.Adicionar(new ContaCorrente(17, 546565));
 
+            ContaCorrente contaArthur = new ContaCorrente(999999999, 4554545);
+
+            ContaCorrente[] contas = new ContaCorrente[]
+            {
+                contaArthur,
+                new ContaCorrente(37, 54656565),
+                new ContaCorrente(37, 54656565)
+            };
+
+            lista.AdicionarVarios(contas);
+            
+
+
+            //lista.Adicionar(contaArthur);
+
+            //lista.Remover(contaArthur);
+
+            //Console.WriteLine("Após remover!");
+
+            for (int i = 0; i < lista.Tamanho; i++)
+            {
+                ContaCorrente itemAtual = lista[i];
+                Console.WriteLine($"Item na posição {i} = Conta {itemAtual.Numero}/{itemAtual.Agencia}");
+            }
+
             Console.ReadLine();
+        }
+
+        static void TestaListaDeObject()
+        {
+            ListaDeObject listaDeIdades = new ListaDeObject();
+
+            listaDeIdades.Adicionar(10);
+            listaDeIdades.Adicionar(4);
+            listaDeIdades.Adicionar(5);
+            listaDeIdades.AdicionarVarios(16, 23, 60);
+
+            for (int i = 0; i < listaDeIdades.Tamanho; i++)
+            {
+                int idade = (int)listaDeIdades[i];
+                Console.WriteLine($"Idade no indice {i}: {idade}");
+            }
         }
 
         static void TestaArrayDeContaCorrente()
