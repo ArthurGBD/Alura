@@ -24,11 +24,34 @@ namespace ByteBank.SistemaAgencia
             };
 
             //contas.Sort();
-            contas.Sort(new ComparadorContaCorrentePorAgencia());
+            //contas.Sort(new ComparadorContaCorrentePorAgencia());
 
-            foreach (var conta in contas)
+            //IOrderedEnumerable<ContaCorrente> contasOrdenadas = contas.OrderBy(conta =>
+            //{
+            //    if (conta == null)
+            //    {
+            //        return int.MinValue;
+            //    }
+            //    return conta.Numero;
+            //});
+
+            //var listaSemNulos = new List<ContaCorrente>();
+
+            //foreach (var conta in contas)
+            //{
+            //    listaSemNulos.Add(conta);
+            //}
+
+            //var contasNaoNulas = contas.Where(conta => conta != null);
+
+            //IOrderedEnumerable<ContaCorrente> contasOrdenadas = contasNaoNulas.OrderBy(conta => conta.Numero);
+            var contasOrdenadas = contas
+                .Where(conta => conta != null)
+                .OrderBy<ContaCorrente, int>(conta => conta.Numero);
+
+            foreach (var conta in contasOrdenadas)
             {
-                Console.WriteLine($"Conta número {conta.Numero}, ag {conta.Agencia} ");
+                Console.WriteLine($"Conta número {conta.Numero}, ag. {conta.Agencia} ");
             }
 
             //List<int> idades = new List<int>();
@@ -54,7 +77,7 @@ namespace ByteBank.SistemaAgencia
 
             //for (int i = 0; i < idades.Count; i++)
             //{
-                //Console.WriteLine(idades[i]);
+            //Console.WriteLine(idades[i]);
             //}
 
             //int[] a = new int[] {0, 1, 2 };
@@ -65,7 +88,7 @@ namespace ByteBank.SistemaAgencia
             Console.ReadLine();
         }
 
-        
+
         static void TestaSort()
         {
             List<int> idades = new List<int>();
