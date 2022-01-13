@@ -1,0 +1,7 @@
+C:\Users\Suporte-AH\Documents\GitHub\Alura\CSharp\C#-8\ByteBank.Modelos\bin\Debug\ByteBank.Modelos.xml
+C:\Users\Suporte-AH\Documents\GitHub\Alura\CSharp\C#-8\ByteBank.Modelos\bin\Debug\ByteBank.Modelos.dll
+C:\Users\Suporte-AH\Documents\GitHub\Alura\CSharp\C#-8\ByteBank.Modelos\bin\Debug\ByteBank.Modelos.pdb
+C:\Users\Suporte-AH\Documents\GitHub\Alura\CSharp\C#-8\ByteBank.Modelos\obj\Debug\ByteBank.Modelos.csproj.AssemblyReference.cache
+C:\Users\Suporte-AH\Documents\GitHub\Alura\CSharp\C#-8\ByteBank.Modelos\obj\Debug\ByteBank.Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Suporte-AH\Documents\GitHub\Alura\CSharp\C#-8\ByteBank.Modelos\obj\Debug\ByteBank.Modelos.dll
+C:\Users\Suporte-AH\Documents\GitHub\Alura\CSharp\C#-8\ByteBank.Modelos\obj\Debug\ByteBank.Modelos.pdb
