@@ -1,0 +1,14 @@
+D:\code_projetos\gitHub\Alura\Challenges\Back-End\Controle-Financeiro-Familiar\ControleFinanceiroFamilar\ControleFinanceiroFamilar.Modelos\bin\Debug\net6.0\ControleFinanceiroFamilar.Modelos.deps.json
+D:\code_projetos\gitHub\Alura\Challenges\Back-End\Controle-Financeiro-Familiar\ControleFinanceiroFamilar\ControleFinanceiroFamilar.Modelos\bin\Debug\net6.0\ControleFinanceiroFamilar.Modelos.dll
+D:\code_projetos\gitHub\Alura\Challenges\Back-End\Controle-Financeiro-Familiar\ControleFinanceiroFamilar\ControleFinanceiroFamilar.Modelos\bin\Debug\net6.0\ref\ControleFinanceiroFamilar.Modelos.dll
+D:\code_projetos\gitHub\Alura\Challenges\Back-End\Controle-Financeiro-Familiar\ControleFinanceiroFamilar\ControleFinanceiroFamilar.Modelos\bin\Debug\net6.0\ControleFinanceiroFamilar.Modelos.pdb
+D:\code_projetos\gitHub\Alura\Challenges\Back-End\Controle-Financeiro-Familiar\ControleFinanceiroFamilar\ControleFinanceiroFamilar.Modelos\obj\Debug\net6.0\ControleFinanceiroFamilar.Modelos.csproj.AssemblyReference.cache
+D:\code_projetos\gitHub\Alura\Challenges\Back-End\Controle-Financeiro-Familiar\ControleFinanceiroFamilar\ControleFinanceiroFamilar.Modelos\obj\Debug\net6.0\ControleFinanceiroFamilar.Modelos.GeneratedMSBuildEditorConfig.editorconfig
+D:\code_projetos\gitHub\Alura\Challenges\Back-End\Controle-Financeiro-Familiar\ControleFinanceiroFamilar\ControleFinanceiroFamilar.Modelos\obj\Debug\net6.0\ControleFinanceiroFamilar.Modelos.AssemblyInfoInputs.cache
+D:\code_projetos\gitHub\Alura\Challenges\Back-End\Controle-Financeiro-Familiar\ControleFinanceiroFamilar\ControleFinanceiroFamilar.Modelos\obj\Debug\net6.0\ControleFinanceiroFamilar.Modelos.AssemblyInfo.cs
+D:\code_projetos\gitHub\Alura\Challenges\Back-End\Controle-Financeiro-Familiar\ControleFinanceiroFamilar\ControleFinanceiroFamilar.Modelos\obj\Debug\net6.0\ControleFinanceiroFamilar.Modelos.csproj.CoreCompileInputs.cache
+D:\code_projetos\gitHub\Alura\Challenges\Back-End\Controle-Financeiro-Familiar\ControleFinanceiroFamilar\ControleFinanceiroFamilar.Modelos\obj\Debug\net6.0\ControleFinanceiroFamilar.Modelos.dll
+D:\code_projetos\gitHub\Alura\Challenges\Back-End\Controle-Financeiro-Familiar\ControleFinanceiroFamilar\ControleFinanceiroFamilar.Modelos\obj\Debug\net6.0\ref\ControleFinanceiroFamilar.Modelos.dll
+D:\code_projetos\gitHub\Alura\Challenges\Back-End\Controle-Financeiro-Familiar\ControleFinanceiroFamilar\ControleFinanceiroFamilar.Modelos\obj\Debug\net6.0\ControleFinanceiroFamilar.Modelos.pdb
+D:\code_projetos\gitHub\Alura\Challenges\Back-End\Controle-Financeiro-Familiar\ControleFinanceiroFamilar\ControleFinanceiroFamilar.Modelos\bin\Debug\net6.0\ControleFinanceiroFamilar.Modelos.runtimeconfig.json
+D:\code_projetos\gitHub\Alura\Challenges\Back-End\Controle-Financeiro-Familiar\ControleFinanceiroFamilar\ControleFinanceiroFamilar.Modelos\obj\Debug\net6.0\ControleFinanceiroFamilar.Modelos.genruntimeconfig.cache
