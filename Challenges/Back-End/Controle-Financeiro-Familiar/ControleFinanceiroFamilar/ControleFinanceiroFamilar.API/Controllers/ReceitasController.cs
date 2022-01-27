@@ -31,11 +31,11 @@ namespace ControleFinanceiroFamilar.API.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<Receitas>> GetReceita(int id)
+        public async Task<ActionResult<Receitas>> GetReceitaById(int id)
         {
             try
             {
-                var result = await _receitasRepository.GetReceita(id);
+                var result = await _receitasRepository.GetReceitaById(id);
                 if (result == null)
                 {
                     return NotFound($"Informação não localizada!");
@@ -92,7 +92,7 @@ namespace ControleFinanceiroFamilar.API.Controllers
         {
             try
             {
-                var receitaToDelete = await _receitasRepository.GetReceita(id);
+                var receitaToDelete = await _receitasRepository.GetReceitaById(id);
 
                 if (receitaToDelete == null)
                 {

@@ -18,15 +18,34 @@ namespace ControleFinanceiroFamilar.API.Repositories
             return await _context.Receitas.AsNoTracking().ToListAsync();
         }
 
-        public async Task<Receitas> GetReceita(int id)
+        public async Task<Receitas> GetReceitaById(int id)
         {
             return await _context.Receitas.FirstOrDefaultAsync(c => c.Id == id);
         }
         public async Task<Receitas> AddReceita(Receitas receitas)
         {
-            var result = await _context.Receitas.AddAsync(receitas);
-            await _context.SaveChangesAsync();
-            return result.Entity;
+            var receitaJaCadastrada = GetReceitasByDescricao(receitas.Descricao, receitas.Data.Month, receitas.Data.Year);
+
+            if (receitaJaCadastrada == null)
+            {
+                var result = await _context.Receitas.AddAsync(receitas);
+                await _context.SaveChangesAsync();
+                return result.Entity;
+
+            }
+
+            return null;
+        }
+
+        public async Task<Receitas> GetReceitasByDescricao(string descricao, int mes, int ano)
+        {
+            var receitaIgualCadastrada = await _context.Receitas
+               .FirstOrDefaultAsync(receitas => receitas.Descricao == descricao &&
+               receitas.Data.Month == mes && receitas.Data.Year == ano
+               );
+
+            return receitaIgualCadastrada;
+
         }
 
 
