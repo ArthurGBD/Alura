@@ -22,9 +22,26 @@ namespace ControleFinanceiroFamilar.API.Repositories
         {
             return await _context.Receitas.FirstOrDefaultAsync(c => c.Id == id);
         }
+        public async Task<Receitas> GetReceitasByDescricaoAndMonth(string descricao, int mes)
+        {
+            var receitaCadastrada = await _context.Receitas
+               .FirstOrDefaultAsync(receitas => receitas.Descricao == descricao &&
+               receitas.Data.Month == mes
+               );
+
+
+
+            if (descricao != receitaCadastrada.Descricao && mes != receitaCadastrada.Data.Month)
+            {
+                    return receitaCadastrada;
+            }
+
+            return null;
+
+        }
         public async Task<Receitas> AddReceita(Receitas receitas)
         {
-            var receitaJaCadastrada = GetReceitasByDescricao(receitas.Descricao, receitas.Data.Month, receitas.Data.Year);
+            var receitaJaCadastrada = GetReceitasByDescricaoAndMonth(receitas.Descricao, receitas.Data.Month);
 
             if (receitaJaCadastrada == null)
             {
@@ -37,16 +54,6 @@ namespace ControleFinanceiroFamilar.API.Repositories
             return null;
         }
 
-        public async Task<Receitas> GetReceitasByDescricao(string descricao, int mes, int ano)
-        {
-            var receitaIgualCadastrada = await _context.Receitas
-               .FirstOrDefaultAsync(receitas => receitas.Descricao == descricao &&
-               receitas.Data.Month == mes && receitas.Data.Year == ano
-               );
-
-            return receitaIgualCadastrada;
-
-        }
 
 
         public async Task<Receitas> UpdateReceita(Receitas receitas)

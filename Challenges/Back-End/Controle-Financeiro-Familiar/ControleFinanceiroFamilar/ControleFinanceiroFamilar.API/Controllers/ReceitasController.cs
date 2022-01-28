@@ -48,8 +48,27 @@ namespace ControleFinanceiroFamilar.API.Controllers
             }
         }
 
+        [HttpGet("{descricao}/{mes}")]
+
+        public async Task<ActionResult<Receitas>> GetReceitasByDescricaoAndMonth(string descricao, int mes)
+        {
+            try
+            {
+                var receitasDescricaoAndMonth = await _receitasRepository.GetReceitasByDescricaoAndMonth(descricao, mes);
+                if (receitasDescricaoAndMonth != null)
+                {
+                    return Ok(receitasDescricaoAndMonth);
+                }
+                return NotFound();
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Erro ao acessar os dados do banco de dados");
+            }
+        }
+
         [HttpPost]
-        public async Task<ActionResult<Receitas>> CreateReceita([FromBody]Receitas receitas)
+        public async Task<ActionResult<Receitas>> CreateReceita([FromBody] Receitas receitas)
         {
             try
             {
@@ -57,7 +76,7 @@ namespace ControleFinanceiroFamilar.API.Controllers
                 {
                     return BadRequest();
                 }
-                
+
                 var createdReceita = await _receitasRepository.AddReceita(receitas);
 
                 return Ok(createdReceita);

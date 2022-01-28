@@ -6,11 +6,13 @@ namespace ControleFinanceiroFamilar.API.Repositories
     {
         Task<IEnumerable<Receitas>> GetReceitas();
         Task<Receitas> GetReceitaById(int id);
-        Task<Receitas> GetReceitasByDescricao(string descricao, int mes, int ano);
+        Task<Receitas> GetReceitasByDescricaoAndMonth(string descricao, int mes);
         Task<Receitas> AddReceita(Receitas receitas);
         Task<Receitas> UpdateReceita(Receitas receitas);
         Task<Receitas> DeleteReceita(int id);
 
-      
+        //public bool ValidarDuplicidadeDaReceita(Receitas receitas);
+
+
     }
 }
