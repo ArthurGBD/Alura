@@ -1,4 +1,4 @@
-﻿using ControleFinanceiroFamilar.API.Repositories;
+﻿using ControleFinanceiroFamilar.API.Service;
 using ControleFinanceiroFamilar.Modelos.Modelos.Despesas;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,9 +9,9 @@ namespace ControleFinanceiroFamilar.API.Controllers
     [ApiController]
     public class DespesasController : ControllerBase
     {
-        private readonly IDespesasRepository _despesasRepository;
+        private readonly IDespesasService _despesasRepository;
 
-        public DespesasController(IDespesasRepository despesasRepository)
+        public DespesasController(IDespesasService despesasRepository)
         {
             _despesasRepository = despesasRepository;
         }
@@ -31,11 +31,11 @@ namespace ControleFinanceiroFamilar.API.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<Despesas>> GetDespesa(int id)
+        public async Task<ActionResult<Despesa>> GetDespesaById(int id)
         {
             try
             {
-                var result = await _despesasRepository.GetDespesa(id);
+                var result = await _despesasRepository.GetDespesaById(id);
                 if (result == null)
                 {
                     return NotFound($"Informação não localizada!");
@@ -48,8 +48,26 @@ namespace ControleFinanceiroFamilar.API.Controllers
             }
         }
 
+        [HttpGet("{descricao}/{mes}")]
+        public async Task<ActionResult> GetDespesaByMonth(string descricao, int mes, int ano)
+        {
+            try
+            {
+                var despesaDescricaoAndMonth = await _despesasRepository.GetDespesasByMonth(descricao, mes, ano);
+                if (despesaDescricaoAndMonth == null)
+                {
+                    return NotFound($"Informação não localizada!");
+                }
+                return Ok(despesaDescricaoAndMonth);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Erro ao acessar os dados do banco de dados");
+            }
+        }
+
         [HttpPost]
-        public async Task<ActionResult<Despesas>> CreateReceita([FromBody] Despesas despesa)
+        public async Task<ActionResult<Despesa>> CreateReceita(Despesa despesa)
         {
             try
             {
@@ -59,6 +77,11 @@ namespace ControleFinanceiroFamilar.API.Controllers
                 }
 
                 var createdDespesa = await _despesasRepository.AddDespesa(despesa);
+
+                if (createdDespesa == null)
+                {
+                    return BadRequest($"O item {despesa.Descricao} não pode ser adicionado pois já existe na data {despesa.Data.Month}/{despesa.Data.Year}");
+                }
 
                 return Ok(createdDespesa);
             }
@@ -70,15 +93,25 @@ namespace ControleFinanceiroFamilar.API.Controllers
 
 
         [HttpPut("{id:}")]
-        public async Task<ActionResult<Despesas>> UpadateDespesa(int id, Despesas despesa)
+        public async Task<ActionResult<Despesa>> UpadateDespesa(int id, Despesa despesa)
         {
             try
             {
+                if (id == null)
+                {
+                    return BadRequest();
+                }
+
+                if (despesa == null)
+                {
+                    return BadRequest();
+                }
+
                 if (id != despesa.Id)
                 {
                     return BadRequest($"O Id {id} não confere com a despesa a ser atualizada");
                 }
-                return await _despesasRepository.UpdateDespesa(despesa);
+                return await _despesasRepository.UpdateDespesa(id, despesa);
             }
 
             catch (Exception)
@@ -88,11 +121,11 @@ namespace ControleFinanceiroFamilar.API.Controllers
         }
 
         [HttpDelete("{id:int}")]
-        public async Task<ActionResult<Despesas>> DeleteDespesa(int id)
+        public async Task<ActionResult<Despesa>> DeleteDespesa(int id)
         {
             try
             {
-                var despesaToDelete = await _despesasRepository.GetDespesa(id);
+                var despesaToDelete = await _despesasRepository.GetDespesaById(id);
 
                 if (despesaToDelete == null)
                 {

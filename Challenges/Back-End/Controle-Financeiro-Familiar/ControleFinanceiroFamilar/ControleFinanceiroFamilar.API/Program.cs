@@ -1,5 +1,5 @@
 using ControleFinanceiroFamilar.API.Context;
-using ControleFinanceiroFamilar.API.Repositories;
+using ControleFinanceiroFamilar.API.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,8 +15,8 @@ builder.Services.AddSwaggerGen();
 // SQL CONNECTION
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddScoped<IReceitasRepository, ReceitasRepository>();
-builder.Services.AddScoped<IDespesasRepository, DespesasRepository>();
+builder.Services.AddScoped<IReceitasService, ReceitasService>();
+builder.Services.AddScoped<IDespesasService, DespesasService>();
 
 var app = builder.Build();
 

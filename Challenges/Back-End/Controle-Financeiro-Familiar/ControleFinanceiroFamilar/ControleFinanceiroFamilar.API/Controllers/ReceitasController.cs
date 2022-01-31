@@ -1,4 +1,4 @@
-﻿using ControleFinanceiroFamilar.API.Repositories;
+﻿using ControleFinanceiroFamilar.API.Service;
 using ControleFinanceiroFamilar.Modelos.Modelos.Receitas;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,9 +9,9 @@ namespace ControleFinanceiroFamilar.API.Controllers
     [ApiController]
     public class ReceitasController : ControllerBase
     {
-        private readonly IReceitasRepository _receitasRepository;
+        private readonly IReceitasService _receitasRepository;
 
-        public ReceitasController(IReceitasRepository receitasRepository)
+        public ReceitasController(IReceitasService receitasRepository)
         {
             _receitasRepository = receitasRepository;
         }
@@ -31,7 +31,7 @@ namespace ControleFinanceiroFamilar.API.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<Receitas>> GetReceitaById(int id)
+        public async Task<ActionResult<Receita>> GetReceitaById(int id)
         {
             try
             {
@@ -50,16 +50,17 @@ namespace ControleFinanceiroFamilar.API.Controllers
 
         [HttpGet("{descricao}/{mes}")]
 
-        public async Task<ActionResult<Receitas>> GetReceitasByDescricaoAndMonth(string descricao, int mes)
+        public async Task<ActionResult> GetReceitasByMonth(string descricao, int mes, int ano)
         {
             try
             {
-                var receitasDescricaoAndMonth = await _receitasRepository.GetReceitasByDescricaoAndMonth(descricao, mes);
-                if (receitasDescricaoAndMonth != null)
+                var receitasDescricaoAndMonth = await _receitasRepository.GetReceitasByMonth(descricao, mes, ano);
+                if (receitasDescricaoAndMonth == null)
                 {
-                    return Ok(receitasDescricaoAndMonth);
+                    return NotFound($"Informação não localizada!");
                 }
-                return NotFound();
+                return Ok(receitasDescricaoAndMonth);
+
             }
             catch (Exception)
             {
@@ -68,16 +69,22 @@ namespace ControleFinanceiroFamilar.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Receitas>> CreateReceita([FromBody] Receitas receitas)
+        public async Task<ActionResult<Receita>> CreateReceita([FromBody]Receita receitas)
         {
             try
             {
+
                 if (receitas == null)
                 {
                     return BadRequest();
                 }
 
                 var createdReceita = await _receitasRepository.AddReceita(receitas);
+
+                if (createdReceita == null)
+                {
+                    return BadRequest($"O item {receitas.Descricao} não pode ser adicionado pois já existe na data {receitas.Data.Month}/{receitas.Data.Year}");
+                }
 
                 return Ok(createdReceita);
             }
@@ -87,17 +94,26 @@ namespace ControleFinanceiroFamilar.API.Controllers
             }
         }
 
-
         [HttpPut("{id:}")]
-        public async Task<ActionResult<Receitas>> UpadateReceita(int id, Receitas receitas)
+        public async Task<ActionResult<Receita>> UpadateReceita(int id, Receita receitas)
         {
             try
             {
+                if (id == null)
+                {
+                    return BadRequest();
+                }
+
+                if (receitas == null)
+                {
+                    return BadRequest();
+                }
+
                 if (id != receitas.Id)
                 {
                     return BadRequest($"O Id {id} não confere com a receita a ser atualizada");
                 }
-                return await _receitasRepository.UpdateReceita(receitas);
+                return await _receitasRepository.UpdateReceita(id, receitas);
             }
 
             catch (Exception)
@@ -107,7 +123,7 @@ namespace ControleFinanceiroFamilar.API.Controllers
         }
 
         [HttpDelete("{id:int}")]
-        public async Task<ActionResult<Receitas>> DeleteReceita(int id)
+        public async Task<ActionResult<Receita>> DeleteReceita(int id)
         {
             try
             {
@@ -125,7 +141,5 @@ namespace ControleFinanceiroFamilar.API.Controllers
                 return StatusCode(500, "Erro ao acessar os dados do banco de dados");
             }
         }
-
-
     }
 }

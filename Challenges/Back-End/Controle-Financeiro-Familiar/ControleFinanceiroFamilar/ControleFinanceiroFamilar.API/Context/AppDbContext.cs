@@ -1,5 +1,6 @@
 ﻿using ControleFinanceiroFamilar.Modelos.Modelos.Despesas;
 using ControleFinanceiroFamilar.Modelos.Modelos.Receitas;
+using ControleFinanceiroFamilar.Modelos.Modelos.Resumo;
 using Microsoft.EntityFrameworkCore;
 
 namespace ControleFinanceiroFamilar.API.Context
@@ -11,7 +12,8 @@ namespace ControleFinanceiroFamilar.API.Context
 
         }
 
-        public DbSet<Receitas> Receitas { get; set; }
-        public DbSet<Despesas> Despesas { get; set; }
+        public DbSet<Receita> Receitas { get; set; }
+        public DbSet<Despesa> Despesas { get; set; }
+        public DbSet<Resumo> Resumos { get; set; }
     }
 }
