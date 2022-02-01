@@ -19,12 +19,25 @@ namespace ControleFinanceiroFamilar.API.Service
         }
         public async Task<Receita> GetReceitaById(int id)
         {
-            return await _context.Receitas.FirstOrDefaultAsync(c => c.Id == id);
+            return await _context.Receitas.FirstOrDefaultAsync(c
+                => c.Id == id);
         }
-        public async Task<Receita> GetReceitasByMonth(string descricao)
+        public async Task<Receita> GetReceitasByDescricao(string descricao)
         {
-            return await _context.Receitas.FirstOrDefaultAsync(receita => receita.Descricao == descricao);
+            if (descricao != null)
+            {
+                return await _context.Receitas.FirstOrDefaultAsync(receita
+                    => receita.Descricao == descricao);
+            }
+            else
+            {
+                return null;
+            }
+
         }
+
+        public async Task<>
+
         public async Task<Receita> AddReceita(Receita receitas)
         {
             var receitaDuplicada = ValidarDuplicidadeDaReceita(receitas);

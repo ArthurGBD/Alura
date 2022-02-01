@@ -48,13 +48,31 @@ namespace ControleFinanceiroFamilar.API.Controllers
             }
         }
 
-        [HttpGet("{descricao}/{mes}")]
-
-        public async Task<ActionResult> GetReceitasByMonth(string descricao, int mes, int ano)
+        [HttpGet("{descricao}")]
+        public async Task<ActionResult> GetReceitaByDescricao([FromBody]string descricao)
         {
             try
             {
-                var receitasDescricaoAndMonth = await _receitasRepository.GetReceitasByMonth(descricao, mes, ano);
+                var result = await _receitasRepository.GetReceitasByDescricao(descricao);
+                if (result == null)
+                {
+                    return NotFound($"Informação não localizada");
+                }
+
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Erro ao acessar os dados do banco de dados");
+            }
+        }
+
+        [HttpGet("{descricao}/{mes}")]
+        public async Task<ActionResult> GetReceitasByData(string descricao, int mes, int ano)
+        {
+            try
+            {
+                var receitasDescricaoAndMonth = await _receitasRepository.GetReceitasByData(descricao, mes, ano);
                 if (receitasDescricaoAndMonth == null)
                 {
                     return NotFound($"Informação não localizada!");
