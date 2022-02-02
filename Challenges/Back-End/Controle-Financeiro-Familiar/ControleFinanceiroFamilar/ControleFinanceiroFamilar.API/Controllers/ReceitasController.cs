@@ -48,8 +48,28 @@ namespace ControleFinanceiroFamilar.API.Controllers
             }
         }
 
+        [HttpGet("{mes}/{ano}")]
+        public async Task<ActionResult> GetReceitasByData(int mes, int ano)
+        {
+            try
+            {
+                var result = await _receitasRepository.GetReceitasByData(mes, ano);
+                if (result == null)
+                {
+                    return NotFound($"Informação não localizada");
+                }
+
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Erro ao acessar os dados do banco de dados");
+            }
+        }
+
+
         [HttpGet("{descricao}")]
-        public async Task<ActionResult> GetReceitaByDescricao([FromBody]string descricao)
+        public async Task<ActionResult> GetReceitaByDescricao(string descricao)
         {
             try
             {
@@ -67,27 +87,27 @@ namespace ControleFinanceiroFamilar.API.Controllers
             }
         }
 
-        [HttpGet("{descricao}/{mes}")]
-        public async Task<ActionResult> GetReceitasByData(string descricao, int mes, int ano)
-        {
-            try
-            {
-                var receitasDescricaoAndMonth = await _receitasRepository.GetReceitasByData(descricao, mes, ano);
-                if (receitasDescricaoAndMonth == null)
-                {
-                    return NotFound($"Informação não localizada!");
-                }
-                return Ok(receitasDescricaoAndMonth);
+        //[HttpGet("{descricao}/{mes}")]
+        //public async Task<ActionResult> GetReceitasByData(string descricao, int mes, int ano)
+        //{
+        //    try
+        //    {
+        //        var receitasDescricaoAndMonth = await _receitasRepository.GetReceitasByData(descricao, mes, ano);
+        //        if (receitasDescricaoAndMonth == null)
+        //        {
+        //            return NotFound($"Informação não localizada!");
+        //        }
+        //        return Ok(receitasDescricaoAndMonth);
 
-            }
-            catch (Exception)
-            {
-                return StatusCode(500, "Erro ao acessar os dados do banco de dados");
-            }
-        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return StatusCode(500, "Erro ao acessar os dados do banco de dados");
+        //    }
+        //}
 
         [HttpPost]
-        public async Task<ActionResult<Receita>> CreateReceita([FromBody]Receita receitas)
+        public async Task<ActionResult<Receita>> CreateReceita([FromBody] Receita receitas)
         {
             try
             {

@@ -14,6 +14,6 @@ namespace ControleFinanceiroFamilar.API.Context
  
         public DbSet<Receita> Receitas { get; set; }
         public DbSet<Despesa> Despesas { get; set; }
-        public DbSet<Resumo> Resumos { get; set; }
+        //public DbSet<Resumo> Resumos { get; set; }
     }
 }

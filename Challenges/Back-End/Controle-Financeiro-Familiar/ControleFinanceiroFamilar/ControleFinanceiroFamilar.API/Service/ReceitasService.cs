@@ -22,21 +22,33 @@ namespace ControleFinanceiroFamilar.API.Service
             return await _context.Receitas.FirstOrDefaultAsync(c
                 => c.Id == id);
         }
-        public async Task<Receita> GetReceitasByDescricao(string descricao)
+
+        public async Task<List<Receita>> GetReceitasByData(int mes, int ano)
         {
-            if (descricao != null)
-            {
-                return await _context.Receitas.FirstOrDefaultAsync(receita
-                    => receita.Descricao == descricao);
-            }
-            else
+            var receitas = await _context.Receitas.Where(receita => receita.Data.Month == mes && receita.Data.Year == ano).ToListAsync();
+
+            if (receitas.Count == 0 || receitas == null )
             {
                 return null;
             }
 
+            return receitas;
         }
 
-        public async Task<>
+        public async Task<List<Receita>> GetReceitasByDescricao(string descricao)
+        {
+            var receitas = await _context.Receitas.AsNoTracking().ToListAsync();
+
+            if (receitas == null)
+            {
+                return null;
+            }
+
+            receitas.ToList().ForEach(d => d.Descricao = descricao);
+
+            return receitas;
+
+        }
 
         public async Task<Receita> AddReceita(Receita receitas)
         {
