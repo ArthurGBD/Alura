@@ -86,6 +86,8 @@ namespace ControleFinanceiroFamilar.API.Service
             foreach (var despesa in despesaQuery)
                 despesaByCategoria.Add(despesa.Key, despesa.ValorTotal);
 
+            List<Dictionary<Categoria, Despesa>> recebeToList = despesaByCategoria.ToList().;  
+
             return despesaByCategoria;
         }
 
