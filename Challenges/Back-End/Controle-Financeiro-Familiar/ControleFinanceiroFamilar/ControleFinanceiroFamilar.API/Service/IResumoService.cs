@@ -9,7 +9,8 @@ namespace ControleFinanceiroFamilar.API.Service
     {
         Task<List<Resumo>> GetResumoData(int mes, int ano);
         Task<Resumo> AddResumo(Resumo resumo);
-        Task<Dictionary<Categoria, double>> GetDespesasByCategoria(List<Despesa> despesaMes);
+        //Task<Categoria> GetDespesaByCategoria(List<Despesa> despesas);
+        public Dictionary<Categoria, double> GetDespesasByCategoria(Dictionary<Categoria, Despesa> despesaMes);
         public double GetTotalDespesas(List<Despesa> despesaMes);
         public double GetTotalReceitas(List<Receita> receitasMes);
     }

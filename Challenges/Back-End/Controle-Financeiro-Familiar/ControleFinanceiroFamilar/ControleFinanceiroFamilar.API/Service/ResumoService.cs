@@ -3,6 +3,7 @@ using ControleFinanceiroFamilar.Modelos.Modelos.Despesas;
 using ControleFinanceiroFamilar.Modelos.Modelos.Enums;
 using ControleFinanceiroFamilar.Modelos.Modelos.ModeloResumo;
 using ControleFinanceiroFamilar.Modelos.Modelos.Receitas;
+using Microsoft.EntityFrameworkCore;
 
 namespace ControleFinanceiroFamilar.API.Service
 {
@@ -17,28 +18,59 @@ namespace ControleFinanceiroFamilar.API.Service
 
         public async Task<List<Resumo>> GetResumoData(int mes, int ano)
         {
-            var resumo = _context.Resumos.FirstOrDefault(resumo =>
-                resumo.Mes == mes && resumo.Ano == ano);
+            //    var resumo = await _context.Resumos.Where(resumo =>
+            //        resumo.Mes == mes && resumo.Ano == ano).ToListAsync();
 
-            if (resumo == null) return null;
+            //if (resumo.Count == 0)
+            //{
+            //    return null;
+            //}
+
+            var resumo = await _context.Resumos.FirstOrDefaultAsync(resumo =>
+            resumo.Mes == mes && resumo.Ano == ano
+            );
+
+            var resumoByCategoraList = new List<Resumo>();
+            
+            if (resumo == null)
+            {
+                return null;
+            }
+
+            if (resumo.Id < 0)
+            {
+                resumo.DespesasTotal = GetTotalDespesas(resumo.Despesas);
+                resumo.ReceitasTotal = GetTotalReceitas(resumo.Receitas);
+                resumo.Saldo = resumo.ReceitasTotal - resumo.DespesasTotal;
+                resumo.DespesasByCategoria = GetDespesasByCategoria(resumo.DespesasByCategoria);
+                return resumo;
+            }
 
 
         }
+
+        //private Dictionary<Categoria, double> GetDespesasByCategoria(Dictionary<Categoria, double> despesasByCategoria)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
         public async Task<Resumo> AddResumo(Resumo resumo)
         {
-            var resumoJaCadastro = _context.Resumos.FirstOrDefault(r =>
+            var resumoJaCadastrado = _context.Resumos.FirstOrDefault(r =>
                 r.Ano == resumo.Ano && r.Mes == resumo.Mes);
 
-            if (resumoJaCadastro == null)
+            if (resumoJaCadastrado == null)
             {
-                _context.Resumos.Add(resumo);
+                var result = await _context.Resumos.AddAsync(resumo);
                 _context.SaveChanges();
 
-                return _
+                return result.Entity;
             }
+
+            return null;
         }
 
-        public async Task<Dictionary<Categoria, double>> GetDespesasByCategoria(List<Despesa> despesaMes)
+        private async Task<Dictionary<Categoria, double>> GetDespesasByCategoria(List<Despesa> despesaMes)
         {
             var despesaByCategoria = new Dictionary<Categoria, double>();
 
@@ -48,7 +80,7 @@ namespace ControleFinanceiroFamilar.API.Service
                 select new
                 {
                     g.Key,
-                    ValorTotal = g.Sum(despesa => despesa.Valor),
+                    ValorTotal = g.Sum(despesa => despesa.Valor), /// Tentar fazer list
                 };
 
             foreach (var despesa in despesaQuery)
