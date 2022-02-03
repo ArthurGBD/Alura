@@ -1,6 +1,6 @@
 ﻿using ControleFinanceiroFamilar.Modelos.Modelos.Despesas;
+using ControleFinanceiroFamilar.Modelos.Modelos.ModeloResumo;
 using ControleFinanceiroFamilar.Modelos.Modelos.Receitas;
-using ControleFinanceiroFamilar.Modelos.Modelos.Resumo;
 using Microsoft.EntityFrameworkCore;
 
 namespace ControleFinanceiroFamilar.API.Context
@@ -11,9 +11,23 @@ namespace ControleFinanceiroFamilar.API.Context
         {
 
         }
- 
+
+        protected override void OnModelCreating(ModelBuilder mb)
+        {
+            mb.Entity<Despesa>()
+                .HasOne(despesa => despesa.Resumo)
+                .WithMany(resumo => resumo.Despesas)
+                .HasForeignKey(despesa => despesa.Resumo.Id);
+            
+            mb.Entity<Receita>()
+                .HasOne(receita => receita.Resumo)
+                .WithMany(resumo => resumo.Receitas)
+                .HasForeignKey(receita => receita.ResumoId);
+        
+        }
+
         public DbSet<Receita> Receitas { get; set; }
         public DbSet<Despesa> Despesas { get; set; }
-        //public DbSet<Resumo> Resumos { get; set; }
+        public DbSet<Resumo> Resumos { get; set; }
     }
 }

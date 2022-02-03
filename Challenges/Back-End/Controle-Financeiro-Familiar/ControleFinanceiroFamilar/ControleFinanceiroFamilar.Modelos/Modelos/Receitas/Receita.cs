@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ControleFinanceiroFamilar.Modelos.Modelos.ModeloResumo;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ControleFinanceiroFamilar.Modelos.Modelos.Receitas
@@ -13,5 +14,9 @@ namespace ControleFinanceiroFamilar.Modelos.Modelos.Receitas
         [Required(ErrorMessage = "Informe a data desta receita!")]
         [Column(TypeName = "dateTime2")]
         public DateTime Data { get; set; }
+
+        [Required]
+        public int ResumoId { get; set; }
+        public virtual Resumo Resumo { get; set; }
     }
 }
