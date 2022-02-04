@@ -18,6 +18,8 @@ namespace ControleFinanceiroFamilar.Modelos.Modelos.ModeloResumo
         public double DespesasTotal { get; set; }
         public double Saldo { get; set; }
         public Dictionary<Categoria, double> DespesasByCategoria { get; set; }
+        //public Categoria Categoria { get; set; }
+
         [JsonIgnore]
         public List<Despesa> Despesas { get; set; }
         [JsonIgnore]

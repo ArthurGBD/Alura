@@ -31,21 +31,25 @@ namespace ControleFinanceiroFamilar.API.Service
             );
 
             var resumoByCategoraList = new List<Resumo>();
-            
+
             if (resumo == null)
             {
                 return null;
             }
 
-            if (resumo.Id < 0)
+            if (resumo != null)
             {
                 resumo.DespesasTotal = GetTotalDespesas(resumo.Despesas);
                 resumo.ReceitasTotal = GetTotalReceitas(resumo.Receitas);
                 resumo.Saldo = resumo.ReceitasTotal - resumo.DespesasTotal;
-                resumo.DespesasByCategoria = GetDespesasByCategoria(resumo.DespesasByCategoria);
-                return resumo;
+                resumo.DespesasByCategoria = GetDespesasByCategoria(resumo.Despesas);
+                
+                resumoByCategoraList.Add(resumo);
+
+                return resumoByCategoraList;
             }
 
+            return null;
 
         }
 
@@ -70,7 +74,9 @@ namespace ControleFinanceiroFamilar.API.Service
             return null;
         }
 
-        private async Task<Dictionary<Categoria, double>> GetDespesasByCategoria(List<Despesa> despesaMes)
+        //public async Task<>
+
+        public Dictionary<Categoria, double> GetDespesasByCategoria(List<Despesa> despesaMes)
         {
             var despesaByCategoria = new Dictionary<Categoria, double>();
 
@@ -85,8 +91,6 @@ namespace ControleFinanceiroFamilar.API.Service
 
             foreach (var despesa in despesaQuery)
                 despesaByCategoria.Add(despesa.Key, despesa.ValorTotal);
-
-            List<Dictionary<Categoria, Despesa>> recebeToList = despesaByCategoria.ToList().;  
 
             return despesaByCategoria;
         }
