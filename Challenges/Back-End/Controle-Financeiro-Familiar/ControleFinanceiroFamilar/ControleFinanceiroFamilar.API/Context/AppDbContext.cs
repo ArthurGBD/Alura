@@ -17,13 +17,16 @@ namespace ControleFinanceiroFamilar.API.Context
             mb.Entity<Despesa>()
                 .HasOne(despesa => despesa.Resumo)
                 .WithMany(resumo => resumo.Despesas)
-                .HasForeignKey(despesa => despesa.Resumo.Id);
+                .HasForeignKey(despesa => despesa.ResumoId);
             
             mb.Entity<Receita>()
                 .HasOne(receita => receita.Resumo)
                 .WithMany(resumo => resumo.Receitas)
                 .HasForeignKey(receita => receita.ResumoId);
-        
+
+            mb.Entity<Resumo>()
+                .HasKey(c => c.Id);
+
         }
 
         public DbSet<Receita> Receitas { get; set; }

@@ -18,14 +18,6 @@ namespace ControleFinanceiroFamilar.API.Service
 
         public async Task<List<Resumo>> GetResumoData(int mes, int ano)
         {
-            //    var resumo = await _context.Resumos.Where(resumo =>
-            //        resumo.Mes == mes && resumo.Ano == ano).ToListAsync();
-
-            //if (resumo.Count == 0)
-            //{
-            //    return null;
-            //}
-
             var resumo = await _context.Resumos.FirstOrDefaultAsync(resumo =>
             resumo.Mes == mes && resumo.Ano == ano
             );
@@ -48,15 +40,8 @@ namespace ControleFinanceiroFamilar.API.Service
 
                 return resumoByCategoraList;
             }
-
             return null;
-
         }
-
-        //private Dictionary<Categoria, double> GetDespesasByCategoria(Dictionary<Categoria, double> despesasByCategoria)
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         public async Task<Resumo> AddResumo(Resumo resumo)
         {
@@ -74,8 +59,6 @@ namespace ControleFinanceiroFamilar.API.Service
             return null;
         }
 
-        //public async Task<>
-
         public Dictionary<Categoria, double> GetDespesasByCategoria(List<Despesa> despesaMes)
         {
             var despesaByCategoria = new Dictionary<Categoria, double>();
@@ -86,7 +69,7 @@ namespace ControleFinanceiroFamilar.API.Service
                 select new
                 {
                     g.Key,
-                    ValorTotal = g.Sum(despesa => despesa.Valor), /// Tentar fazer list
+                    ValorTotal = g.Sum(despesa => despesa.Valor),
                 };
 
             foreach (var despesa in despesaQuery)
