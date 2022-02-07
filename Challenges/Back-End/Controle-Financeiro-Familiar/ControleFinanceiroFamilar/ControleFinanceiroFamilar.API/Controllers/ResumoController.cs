@@ -35,6 +35,7 @@ namespace ControleFinanceiroFamilar.API.Controllers
                 return StatusCode(500, "Erro ao acessar os dados do banco de dados");
             }
         }
+
         [HttpPost]
         public async Task<ActionResult<Resumo>> AddResumo(Resumo resumo)
         {
@@ -49,7 +50,8 @@ namespace ControleFinanceiroFamilar.API.Controllers
 
                 if (criarResumo == null) return BadRequest();
 
-                return CreatedAtAction(nameof(criarResumo), new { Ano = criarResumo.Ano, Mes = criarResumo.Mes }, criarResumo);
+                //return CreatedAtAction(nameof(criarResumo), new { Ano = criarResumo.Ano, Mes = criarResumo.Mes }, criarResumo);
+                return Ok(criarResumo);
 
             }
             catch (Exception)

@@ -1,5 +1,6 @@
 ﻿using ControleFinanceiroFamilar.API.Service;
 using ControleFinanceiroFamilar.Modelos.Modelos.Despesas;
+using ControleFinanceiroFamilar.Modelos.Modelos.Enums;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -49,11 +50,11 @@ namespace ControleFinanceiroFamilar.API.Controllers
         }
 
         [HttpGet("{descricao}/{mes}")]
-        public async Task<ActionResult> GetDespesaByMonth(string descricao, int mes, int ano)
+        public async Task<ActionResult> GetDespesasByDescricaoAndMonth(string descricao, int mes, int ano)
         {
             try
             {
-                var despesaDescricaoAndMonth = await _despesasRepository.GetDespesasByMonth(descricao, mes, ano);
+                var despesaDescricaoAndMonth = await _despesasRepository.GetDespesasByDescricao(descricao);
                 if (despesaDescricaoAndMonth == null)
                 {
                     return NotFound($"Informação não localizada!");
@@ -67,7 +68,7 @@ namespace ControleFinanceiroFamilar.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Despesa>> CreateReceita(Despesa despesa)
+        public async Task<ActionResult<Despesa>> CreateReceita([FromBody]Despesa despesa, Categoria categoria)
         {
             try
             {
@@ -76,7 +77,7 @@ namespace ControleFinanceiroFamilar.API.Controllers
                     return BadRequest();
                 }
 
-                var createdDespesa = await _despesasRepository.AddDespesa(despesa);
+                var createdDespesa = await _despesasRepository.AddDespesa(despesa, categoria);
 
                 if (createdDespesa == null)
                 {

@@ -11,6 +11,7 @@ namespace ControleFinanceiroFamilar.API.Service
         Task<Receita> AddReceita(Receita receitas);
         Task<Receita> UpdateReceita(int id, Receita receitas);
         Task<Receita> DeleteReceita(int id);
+        //public bool VerificarCompatibilidadeResumo(Receita receita);
         public bool ValidarDuplicidadeDaReceita(Receita receitas);
         public bool ValidarDuplicidadeDaReceita(int id, Receita receitas);
         

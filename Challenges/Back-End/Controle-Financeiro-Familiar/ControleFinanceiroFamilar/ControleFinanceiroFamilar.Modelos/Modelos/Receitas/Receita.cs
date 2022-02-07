@@ -14,9 +14,8 @@ namespace ControleFinanceiroFamilar.Modelos.Modelos.Receitas
         [Required(ErrorMessage = "Informe a data desta receita!")]
         [Column(TypeName = "dateTime2")]
         public DateTime Data { get; set; }
-
-        [Required]
-        public int ResumoId { get; set; }
-        public virtual Resumo Resumo { get; set; }
+        //public Resumo Resumo { get; set; }
+        
+        //public int ResumoId { get; set; }
     }
 }

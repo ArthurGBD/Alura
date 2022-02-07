@@ -3,6 +3,7 @@ using ControleFinanceiroFamilar.Modelos.Modelos.ModeloResumo;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace ControleFinanceiroFamilar.Modelos.Modelos.Despesas
 {
@@ -17,11 +18,12 @@ namespace ControleFinanceiroFamilar.Modelos.Modelos.Despesas
         [Required(ErrorMessage = "Informe a data desta despesa!")]
         [Column(TypeName = "DateTime2")]
         public DateTime Data { get; set; }
-        public Categoria Categoria { get; set; }
-        
         [Required]
-        public int ResumoId { get; set; }   
-        public virtual Resumo Resumo { get; set; }
+        public Categoria Categoria { get; set; } = 0;
+
+        //public Resumo Resumo { get; set; }
+      
+        //public int ResumoId { get; set; }   
 
     }
 }

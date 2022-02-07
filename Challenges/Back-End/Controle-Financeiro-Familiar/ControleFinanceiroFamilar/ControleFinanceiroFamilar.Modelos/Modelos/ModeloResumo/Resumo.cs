@@ -2,6 +2,7 @@
 using ControleFinanceiroFamilar.Modelos.Modelos.Enums;
 using ControleFinanceiroFamilar.Modelos.Modelos.Receitas;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace ControleFinanceiroFamilar.Modelos.Modelos.ModeloResumo
@@ -10,18 +11,18 @@ namespace ControleFinanceiroFamilar.Modelos.Modelos.ModeloResumo
     {
         
         public int Id { get; set; }
-        [Required]
+        
         public int Mes { get; set; }
-        [Required]
+        
         public int Ano { get; set; }
         public double ReceitasTotal { get; set; }
         public double DespesasTotal { get; set; }
         public double Saldo { get; set; }
-        [Key]
+        
+        
         public Dictionary<Categoria, double> DespesasByCategoria { get; set; }
-        [JsonIgnore]
         public List<Despesa> Despesas { get; set; }
-        [JsonIgnore]
+       
         public List<Receita> Receitas { get; set; }
     }
 }

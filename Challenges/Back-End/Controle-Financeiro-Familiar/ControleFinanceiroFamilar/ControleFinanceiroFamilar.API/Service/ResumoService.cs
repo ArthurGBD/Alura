@@ -4,6 +4,7 @@ using ControleFinanceiroFamilar.Modelos.Modelos.Enums;
 using ControleFinanceiroFamilar.Modelos.Modelos.ModeloResumo;
 using ControleFinanceiroFamilar.Modelos.Modelos.Receitas;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace ControleFinanceiroFamilar.API.Service
 {
@@ -22,8 +23,6 @@ namespace ControleFinanceiroFamilar.API.Service
             resumo.Mes == mes && resumo.Ano == ano
             );
 
-            var resumoByCategoraList = new List<Resumo>();
-
             if (resumo == null)
             {
                 return null;
@@ -31,15 +30,14 @@ namespace ControleFinanceiroFamilar.API.Service
 
             if (resumo != null)
             {
-                resumo.DespesasTotal = GetTotalDespesas(resumo.Despesas);
-                resumo.ReceitasTotal = GetTotalReceitas(resumo.Receitas);
-                resumo.Saldo = resumo.ReceitasTotal - resumo.DespesasTotal;
-                resumo.DespesasByCategoria = GetDespesasByCategoria(resumo.Despesas);
-                
-                resumoByCategoraList.Add(resumo);
+                var despesa = new Despesa { };
+                var receita = new Receita { };
 
+                var resumoByCategoraList = new List<Resumo>(CalculaResumo(resumo, despesa, receita));
+                
                 return resumoByCategoraList;
             }
+
             return null;
         }
 
@@ -92,6 +90,23 @@ namespace ControleFinanceiroFamilar.API.Service
                           select receita.Valor;
 
             return valores.Sum();
+        }
+
+        public List<Resumo> CalculaResumo(Resumo resumo, Despesa despesa, Receita receita)
+        {
+
+            var despesaList = new List<Despesa> { despesa };
+            var resumoList = new List<Resumo>();
+
+            resumo.DespesasTotal = resumo.DespesasTotal + despesa.Valor;
+            resumo.ReceitasTotal = resumo.ReceitasTotal + receita.Valor;
+            resumo.Saldo = resumo.ReceitasTotal - resumo.DespesasTotal;
+            resumo.DespesasByCategoria = GetDespesasByCategoria(despesaList);
+
+            resumoList.Add(resumo);
+
+            return resumoList;
+
         }
     }
 }

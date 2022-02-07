@@ -17,6 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(buil
 
 builder.Services.AddScoped<IReceitasService, ReceitasService>();
 builder.Services.AddScoped<IDespesasService, DespesasService>();
+builder.Services.AddScoped<IResumoService, ResumoService>();
 
 var app = builder.Build();
 

@@ -14,18 +14,18 @@ namespace ControleFinanceiroFamilar.API.Context
 
         protected override void OnModelCreating(ModelBuilder mb)
         {
-            mb.Entity<Despesa>()
-                .HasOne(despesa => despesa.Resumo)
-                .WithMany(resumo => resumo.Despesas)
-                .HasForeignKey(despesa => despesa.ResumoId);
-            
-            mb.Entity<Receita>()
-                .HasOne(receita => receita.Resumo)
-                .WithMany(resumo => resumo.Receitas)
-                .HasForeignKey(receita => receita.ResumoId);
+            //    //mb.Entity<Despesa>()
+            //    //    .HasOne(despesa => despesa.Resumo)
+            //    //    .WithMany(resumo => resumo.Despesas)
+            //    //    .HasForeignKey(despesa => despesa.ResumoId);
+
+            //    //mb.Entity<Receita>()
+            //    //    .HasOne(receita => receita.Resumo)
+            //    //    .WithMany(resumo => resumo.Receitas)
+            //    //    .HasForeignKey(receita => receita.ResumoId);
 
             mb.Entity<Resumo>()
-                .HasKey(c => c.Id);
+                .HasKey(c => c.DespesasByCategoria);
 
         }
 

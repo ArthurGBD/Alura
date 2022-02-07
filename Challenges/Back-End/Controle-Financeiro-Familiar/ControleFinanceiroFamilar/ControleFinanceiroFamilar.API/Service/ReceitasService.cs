@@ -25,9 +25,10 @@ namespace ControleFinanceiroFamilar.API.Service
 
         public async Task<List<Receita>> GetReceitasByData(int mes, int ano)
         {
-            var receitas = await _context.Receitas.Where(receita => receita.Data.Month == mes && receita.Data.Year == ano).ToListAsync();
+            var receitas = await _context.Receitas.Where(receita
+                => receita.Data.Month == mes && receita.Data.Year == ano).ToListAsync();
 
-            if (receitas.Count == 0 || receitas == null )
+            if (receitas.Count == 0 || receitas == null)
             {
                 return null;
             }
@@ -53,6 +54,7 @@ namespace ControleFinanceiroFamilar.API.Service
         public async Task<Receita> AddReceita(Receita receitas)
         {
             var receitaDuplicada = ValidarDuplicidadeDaReceita(receitas);
+            //var compativelResumo = VerificarCompatibilidadeResumo(receitas);
 
             if (!receitaDuplicada)
             {
@@ -65,11 +67,21 @@ namespace ControleFinanceiroFamilar.API.Service
         public async Task<Receita> UpdateReceita(int id, Receita receitas)
         {
             var result = _context.Receitas.FirstOrDefault(c => c.Id == receitas.Id);
+
             if (result != null)
             {
                 var receitaDuplicada = ValidarDuplicidadeDaReceita(id, receitas);
+                //var compativelResumo = VerificarCompatibilidadeResumo(receitas);
 
-                if (!receitaDuplicada)
+                if (receitaDuplicada)
+                {
+                    return null;
+                }
+                //else if (compativelResumo)
+                //{
+                //    return null;
+                //}
+                else
                 {
                     result.Descricao = receitas.Descricao;
                     result.Valor = receitas.Valor;
@@ -125,5 +137,18 @@ namespace ControleFinanceiroFamilar.API.Service
 
             return true;
         }
+
+        //public bool VerificarCompatibilidadeResumo(Receita receita)
+        //{
+        //    var resultDespesa = new 
+
+        //    var resultResumo = _context.Resumos.FirstOrDefault(r => r.Id == receita.Resum);
+
+        //    if (resultResumo == null) return false;
+        //    else if (resultResumo.Ano != receita.Data.Year || resultResumo.Mes != receita.Data.Month)
+        //        return false;
+
+        //    return true;
+        //}
     }
 }

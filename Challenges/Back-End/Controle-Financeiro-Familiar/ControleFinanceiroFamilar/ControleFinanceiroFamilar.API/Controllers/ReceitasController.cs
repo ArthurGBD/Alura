@@ -87,25 +87,6 @@ namespace ControleFinanceiroFamilar.API.Controllers
             }
         }
 
-        //[HttpGet("{descricao}/{mes}")]
-        //public async Task<ActionResult> GetReceitasByData(string descricao, int mes, int ano)
-        //{
-        //    try
-        //    {
-        //        var receitasDescricaoAndMonth = await _receitasRepository.GetReceitasByData(descricao, mes, ano);
-        //        if (receitasDescricaoAndMonth == null)
-        //        {
-        //            return NotFound($"Informação não localizada!");
-        //        }
-        //        return Ok(receitasDescricaoAndMonth);
-
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return StatusCode(500, "Erro ao acessar os dados do banco de dados");
-        //    }
-        //}
-
         [HttpPost]
         public async Task<ActionResult<Receita>> CreateReceita([FromBody] Receita receitas)
         {
