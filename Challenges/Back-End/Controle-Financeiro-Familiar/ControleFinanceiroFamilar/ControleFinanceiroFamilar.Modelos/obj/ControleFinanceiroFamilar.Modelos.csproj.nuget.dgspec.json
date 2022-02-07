@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\code_projetos\\gitHub\\Alura\\Challenges\\Back-End\\Controle-Financeiro-Familiar\\ControleFinanceiroFamilar\\ControleFinanceiroFamilar.Modelos\\ControleFinanceiroFamilar.Modelos.csproj": {}
+    "C:\\Users\\Suporte-AH\\Documents\\GitHub\\Alura\\Challenges\\Back-End\\Controle-Financeiro-Familiar\\ControleFinanceiroFamilar\\ControleFinanceiroFamilar.Modelos\\ControleFinanceiroFamilar.Modelos.csproj": {}
   },
   "projects": {
-    "D:\\code_projetos\\gitHub\\Alura\\Challenges\\Back-End\\Controle-Financeiro-Familiar\\ControleFinanceiroFamilar\\ControleFinanceiroFamilar.Modelos\\ControleFinanceiroFamilar.Modelos.csproj": {
+    "C:\\Users\\Suporte-AH\\Documents\\GitHub\\Alura\\Challenges\\Back-End\\Controle-Financeiro-Familiar\\ControleFinanceiroFamilar\\ControleFinanceiroFamilar.Modelos\\ControleFinanceiroFamilar.Modelos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\code_projetos\\gitHub\\Alura\\Challenges\\Back-End\\Controle-Financeiro-Familiar\\ControleFinanceiroFamilar\\ControleFinanceiroFamilar.Modelos\\ControleFinanceiroFamilar.Modelos.csproj",
+        "projectUniqueName": "C:\\Users\\Suporte-AH\\Documents\\GitHub\\Alura\\Challenges\\Back-End\\Controle-Financeiro-Familiar\\ControleFinanceiroFamilar\\ControleFinanceiroFamilar.Modelos\\ControleFinanceiroFamilar.Modelos.csproj",
         "projectName": "ControleFinanceiroFamilar.Modelos",
-        "projectPath": "D:\\code_projetos\\gitHub\\Alura\\Challenges\\Back-End\\Controle-Financeiro-Familiar\\ControleFinanceiroFamilar\\ControleFinanceiroFamilar.Modelos\\ControleFinanceiroFamilar.Modelos.csproj",
-        "packagesPath": "C:\\Users\\artea\\.nuget\\packages\\",
-        "outputPath": "D:\\code_projetos\\gitHub\\Alura\\Challenges\\Back-End\\Controle-Financeiro-Familiar\\ControleFinanceiroFamilar\\ControleFinanceiroFamilar.Modelos\\obj\\",
+        "projectPath": "C:\\Users\\Suporte-AH\\Documents\\GitHub\\Alura\\Challenges\\Back-End\\Controle-Financeiro-Familiar\\ControleFinanceiroFamilar\\ControleFinanceiroFamilar.Modelos\\ControleFinanceiroFamilar.Modelos.csproj",
+        "packagesPath": "C:\\Users\\Suporte-AH\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Suporte-AH\\Documents\\GitHub\\Alura\\Challenges\\Back-End\\Controle-Financeiro-Familiar\\ControleFinanceiroFamilar\\ControleFinanceiroFamilar.Modelos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\artea\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Suporte-AH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -65,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
