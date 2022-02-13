@@ -27,14 +27,14 @@ INSERT INTO aluno (
 	matriculado_em
 				 )
 VALUES (
-	'Arthur',
+	'Larissa',
 	'47579795841',
 	'Eai!',
 	22,
 	100.50,
 	1.89,
 	TRUE,
-	'1999-09-28',
+	'1999-06-08',
 	'17:30:00',
 	'2022-02-10 10:45:50'
 );
@@ -55,7 +55,7 @@ UPDATE aluno
 	hora_aula = '13:00:00',
 	matriculado_em = '2020-01-02'
 	
-WHERE id = 1;
+WHERE id = 3;
 
 SELECT *
 	FROM aluno
@@ -65,7 +65,89 @@ DELETE
 	FROM aluno
 	WHERE nome = 'Teste';
 
+SELECT nome AS "Nome do Aluno",
+	   idade,
+	   matriculado_em AS quando_se_matriculou
+	from aluno;
 
+INSERT INTO aluno (nome) VALUES ('Vinícios Dias');
+INSERT INTO aluno (nome) VALUES ('Arthur');
+INSERT INTO aluno (nome) VALUES ('Larissa Nunes');
+INSERT INTO aluno (nome) VALUES ('Joao Vitor');
 
+SELECT *
+	FROM aluno
+ WHERE nome = 'Arthur';
 
+SELECT *
+	FROM aluno
+ WHERE nome <> 'Arthur';
+ 
+ SELECT *
+	FROM aluno
+ WHERE nome != 'Arthur';
+ 
+ SELECT *
+	FROM aluno
+ WHERE nome LIKE '_Arthur';
+ 
+  SELECT *
+	FROM aluno
+ WHERE nome LIKE 'Art_hur';
+ 
+ SELECT *
+	FROM aluno
+ WHERE nome NOT LIKE 'Arthur';
+ 
+ SELECT *
+	FROM aluno
+ WHERE nome LIKE '% %';
+ 
+SELECT *
+FROM aluno
+WHERE cpf IS NULL;
 
+SELECT *
+FROM aluno
+WHERE cpf IS NOT NULL;
+
+SELECT *
+FROM aluno
+WHERE idade = 36;
+
+SELECT *
+FROM aluno
+WHERE idade <> 36;
+
+SELECT *
+FROM aluno
+WHERE idade >= 36;
+ 
+SELECT *
+FROM aluno
+WHERE idade > 36;
+
+SELECT *
+FROM aluno
+WHERE idade < 36;
+
+SELECT *
+FROM aluno
+WHERE idade BETWEEN 10 AND 40;
+
+SELECT *
+FROM aluno
+WHERE ativo = true;
+
+SELECT *
+FROM aluno
+WHERE nome LIKE 'D%' 
+AND cpf IS NOT NULL;
+
+SELECT *
+FROM aluno
+WHERE nome LIKE 'Diogo' 
+OR nome LIKE 'Rodrigo'
+OR nome LIKE 'Arthur';
+ 
+ 
