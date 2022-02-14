@@ -202,8 +202,6 @@ INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (2,1);
 INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (3,1);
 INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (1,3);
 
-
-
 SELECT * FROM aluno WHERE id = 1;
 SELECT * FROM curso WHERE id = 1;
 
@@ -294,7 +292,122 @@ SELECT aluno.nome AS aluno_nome,
 		WHERE id = 2;
 		
 	UPDATE aluno
-		SET id = 20
-		WHERE id = 4;
+		SET nome = 'Arthur'
+		WHERE id = 3;
 
+DROP TABLE aluno_curso;
 
+CREATE TABLE aluno_curso (
+	aluno_id INTEGER,
+	curso_id INTEGER,
+	PRIMARY KEY (aluno_id, curso_id),
+	
+	FOREIGN KEY (aluno_id)
+		REFERENCES aluno (id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
+	,
+	
+	FOREIGN KEY (curso_id)
+		REFERENCES curso (id)
+);
+
+INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (1,1);
+INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (2,1);
+
+INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (3,1);
+
+SELECT 
+		 aluno.id   AS aluno_id, 
+		 aluno.nome AS aluno_nome,
+		 curso.id 	AS curso_id,
+	     curso.nome AS curso_nome
+	FROM aluno
+	JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id
+	JOIN curso 	     ON curso.id 			 = aluno_curso.curso_id
+	
+	
+	UPDATE aluno
+		SET id = 10
+		WHERE id = 2;
+
+/* EXERCICIO */
+
+DROP TABLE pessoas;
+
+DROP TABLE telefones;
+
+CREATE TABLE pessoas (
+    id INTEGER PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE telefones (
+    id INTEGER PRIMARY KEY,
+    pessoa_id INTEGER,
+    numero VARCHAR(15) NOT NULL,
+    FOREIGN KEY (pessoa_id) REFERENCES pessoas (id)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE
+);
+
+INSERT INTO pessoas (id, nome) VALUES (1,'Diogo');
+INSERT INTO telefones (id, pessoa_id, numero) VALUES (1,1,'(21) 98765-4321');
+
+UPDATE pessoas SET id = 2 WHERE nome = 'Diogo';
+DELETE FROM pessoas WHERE nome = 'Diogo';
+
+DROP TABLE funcionarios;
+
+CREATE TABLE funcionarios(
+	id		  SERIAL		  PRIMARY KEY,
+	matricula VARCHAR(10),
+	nome	  VARCHAR(255),
+	sobrenome VARCHAR(255)
+);
+
+INSERT INTO funcionarios (matricula, nome, sobrenome) VALUES ('M001', 'Diogo', 'Mascarenhas');
+INSERT INTO funcionarios (matricula, nome, sobrenome) VALUES ('M002', 'Vinícius', 'Dias');
+INSERT INTO funcionarios (matricula, nome, sobrenome) VALUES ('M003', 'Nico', 'Steppat');
+INSERT INTO funcionarios (matricula, nome, sobrenome) VALUES ('M004', 'João', 'Roberto');
+INSERT INTO funcionarios (matricula, nome, sobrenome) VALUES ('M005', 'Diogo', 'Mascarenhas');
+INSERT INTO funcionarios (matricula, nome, sobrenome) VALUES ('M006', 'Alberto', 'Martins');
+
+SELECT *
+	FROM funcionarios 
+	ORDER BY nome DESC
+	
+SELECT *
+	FROM funcionarios 
+	ORDER BY nome ASC
+	
+SELECT *
+	FROM funcionarios 
+	ORDER BY 3,4,2
+	
+SELECT *
+	FROM funcionarios 
+	ORDER BY 4 DESC, funcionarios.nome DESC, 2 ASC
+	
+SELECT 
+		 aluno.id   AS aluno_id, 
+		 aluno.nome AS aluno_nome,
+		 curso.id 	AS curso_id,
+	     curso.nome AS curso_nome
+	FROM aluno
+	JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id
+	JOIN curso 	     ON curso.id 			 = aluno_curso.curso_id
+	ORDER BY aluno.nome DESC, curso.nome
+	
+SELECT * FROM funcionarios 
+ORDER BY id
+LIMIT 5
+OFFSET 2;
+	
+SELECT COUNT(id),
+	SUM(id),
+	MAX(id),
+	MIN(id),
+	AVG(id),
+	ROUND(AVG(id),2)
+FROM funcionarios;
