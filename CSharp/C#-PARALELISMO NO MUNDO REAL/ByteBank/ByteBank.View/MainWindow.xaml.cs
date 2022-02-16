@@ -44,16 +44,22 @@ namespace ByteBank.View
 
             var contasTarefas = contas.Select(conta =>
             {
-                Task.Factory.StartNew(() =>
+                return Task.Factory.StartNew(() =>
+                 {
+                     var resultadoConta = r_Servico.ConsolidarMovimentacao(conta);
+                     resultado.Add(resultadoConta);
+                 });
+            }).ToArray(); // Força a executar todos os itens 
+
+            TaskScheduler.FromCurrentSynchronizationContext();
+
+            Task.WhenAll(contasTarefas)
+                .ContinueWith(task =>
                 {
-                    var resultadoConta = r_Servico.ConsolidarMovimentacao(conta);
-                    resultado.Add(resultadoConta);
+                    var fim = DateTime.Now;
+
+                    AtualizarView(resultado, fim - inicio);
                 });
-            });
-
-            var fim = DateTime.Now;
-
-            AtualizarView(resultado, fim - inicio);
         }
 
         private void AtualizarView(List<String> result, TimeSpan elapsedTime)
