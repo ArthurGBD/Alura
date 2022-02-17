@@ -32,34 +32,39 @@ namespace ByteBank.View
             r_Servico = new ContaClienteService();
         }
 
-        private void BtnProcessar_Click(object sender, RoutedEventArgs e)
+        private async void BtnProcessar_Click(object sender, RoutedEventArgs e)
         {
+            //var taskSchedulerUI = TaskScheduler.FromCurrentSynchronizationContext();
+            BtnProcessar.IsEnabled = false;
+
             var contas = r_Repositorio.GetContaClientes();
 
-            var resultado = new List<string>();
 
             AtualizarView(new List<string>(), TimeSpan.Zero);
 
             var inicio = DateTime.Now;
 
-            var contasTarefas = contas.Select(conta =>
+            var resultado = await ConsolidarContas(contas);
+
+            var fim = DateTime.Now;
+            AtualizarView(resultado, fim - inicio);
+            BtnProcessar.IsEnabled = true;
+
+        }
+
+        private async Task<List<string>> ConsolidarContas(IEnumerable<ContaCliente> contas)
+        {
+            var resultado = new List<string>();
+
+            var tasks = contas.Select(conta =>
+
+               Task.Factory.StartNew(() => r_Servico.ConsolidarMovimentacao(conta))
+           );
+
+            return Task.WhenAll(tasks).ContinueWith(task =>
             {
-                return Task.Factory.StartNew(() =>
-                 {
-                     var resultadoConta = r_Servico.ConsolidarMovimentacao(conta);
-                     resultado.Add(resultadoConta);
-                 });
-            }).ToArray(); // Força a executar todos os itens 
-
-            TaskScheduler.FromCurrentSynchronizationContext();
-
-            Task.WhenAll(contasTarefas)
-                .ContinueWith(task =>
-                {
-                    var fim = DateTime.Now;
-
-                    AtualizarView(resultado, fim - inicio);
-                });
+                return resultado;
+            });
         }
 
         private void AtualizarView(List<String> result, TimeSpan elapsedTime)
