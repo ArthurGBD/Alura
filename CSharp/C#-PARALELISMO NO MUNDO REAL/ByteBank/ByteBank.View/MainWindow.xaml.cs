@@ -50,27 +50,28 @@ namespace ByteBank.View
             AtualizarView(resultado, fim - inicio);
             BtnProcessar.IsEnabled = true;
 
+            Task.Factory.StartNew(() =>
+{
+                var context = TaskScheduler.FromCurrentSynchronizationContext();
+                Task.Factory.StartNew(() => CalculaRaiz(100))
+.ContinueWith(t => btnCalcular.IsEnabled = true, context);
+                 });
         }
 
-        private async Task<List<string>> ConsolidarContas(IEnumerable<ContaCliente> contas)
+        private async Task<string[]> ConsolidarContas(IEnumerable<ContaCliente> contas)
         {
             var resultado = new List<string>();
 
             var tasks = contas.Select(conta =>
-
-               Task.Factory.StartNew(() => r_Servico.ConsolidarMovimentacao(conta))
-           );
-
-            return Task.WhenAll(tasks).ContinueWith(task =>
-            {
-                return resultado;
-            });
+               Task.Factory.StartNew(() => r_Servico.ConsolidarMovimentacao(conta)));
+            
+            return await Task.WhenAll(tasks);
         }
 
-        private void AtualizarView(List<String> result, TimeSpan elapsedTime)
+        private void AtualizarView(IEnumerable<String> result, TimeSpan elapsedTime)
         {
             var tempoDecorrido = $"{ elapsedTime.Seconds }.{ elapsedTime.Milliseconds} segundos!";
-            var mensagem = $"Processamento de {result.Count} clientes em {tempoDecorrido}";
+            var mensagem = $"Processamento de {result.Count()} clientes em {tempoDecorrido}";
 
             LstResultados.ItemsSource = result;
             TxtTempo.Text = mensagem;
