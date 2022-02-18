@@ -36,12 +36,13 @@ namespace ByteBank.View
         {
             //var taskSchedulerUI = TaskScheduler.FromCurrentSynchronizationContext();
             BtnProcessar.IsEnabled = false;
-
+ 
             var contas = r_Repositorio.GetContaClientes();
 
 
             AtualizarView(new List<string>(), TimeSpan.Zero);
 
+            
             var inicio = DateTime.Now;
 
             var resultado = await ConsolidarContas(contas);
@@ -50,12 +51,11 @@ namespace ByteBank.View
             AtualizarView(resultado, fim - inicio);
             BtnProcessar.IsEnabled = true;
 
-            Task.Factory.StartNew(() =>
-{
-                var context = TaskScheduler.FromCurrentSynchronizationContext();
-                Task.Factory.StartNew(() => CalculaRaiz(100))
-.ContinueWith(t => btnCalcular.IsEnabled = true, context);
-                 });
+        }
+
+        private async Task<double> CalculaRaiz(double num)
+        {
+            return await Task.Run(() => Math.Sqrt(num));
         }
 
         private async Task<string[]> ConsolidarContas(IEnumerable<ContaCliente> contas)
@@ -66,6 +66,13 @@ namespace ByteBank.View
                Task.Factory.StartNew(() => r_Servico.ConsolidarMovimentacao(conta)));
             
             return await Task.WhenAll(tasks);
+        }
+
+        private void LimparView()
+        {
+            LstResultados.ItemsSource = null;
+            TxtTempo.Text = null;
+            PgsProgresso.Value = 0;
         }
 
         private void AtualizarView(IEnumerable<String> result, TimeSpan elapsedTime)
