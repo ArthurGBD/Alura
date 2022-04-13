@@ -47,3 +47,5 @@ D:\code_projetos\gitHub\Alura\ASP .NET CORE REST APIS\FilmesAPI\FilmesAPI\obj\De
 D:\code_projetos\gitHub\Alura\ASP .NET CORE REST APIS\FilmesAPI\FilmesAPI\obj\Debug\net5.0\FilmesAPI.genruntimeconfig.cache
 D:\code_projetos\gitHub\Alura\ASP .NET CORE REST APIS\FilmesAPI\FilmesAPI\bin\Debug\net5.0\AutoMapper.dll
 D:\code_projetos\gitHub\Alura\ASP .NET CORE REST APIS\FilmesAPI\FilmesAPI\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\code_projetos\gitHub\Alura\ASP .NET CORE REST APIS\FilmesAPI\FilmesAPI\bin\Debug\net5.0\Castle.Core.dll
+D:\code_projetos\gitHub\Alura\ASP .NET CORE REST APIS\FilmesAPI\FilmesAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll

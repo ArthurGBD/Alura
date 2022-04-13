@@ -15,10 +15,10 @@ namespace FilmesAPI.Controllers
     [Route("[controller]")]
     public class EnderecoController : ControllerBase
     {
-        private FilmeContext _context;
+        private AppDbContext _context;
         private IMapper _mapper;
 
-        public EnderecoController(FilmeContext context, IMapper mapper)
+        public EnderecoController(AppDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
